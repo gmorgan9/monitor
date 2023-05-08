@@ -157,7 +157,7 @@ foreach ($jsonLines as $index => $line) {
 
     // Prepare the SQL insert statement
     $sql = "INSERT INTO alerts (idno, seconds, action, class, timestamp) VALUES ('$idno', '$seconds', '$action', '$class', '$formattedTimestamp')";
-    mysqli_query($conn, $sql)
+    mysqli_query($conn, $sql);
     // Execute the SQL statement
     // if (mysqli_query($conn, $sql)) {
     //     echo "Data inserted successfully for line " . ($index + 1) . "<br>";
