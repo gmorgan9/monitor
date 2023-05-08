@@ -27,9 +27,26 @@ session_start();
     <!-- container -->
         <div class="container">
 
-            <a class="text-decoration-none text-secondary fs-1 float-end" href="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <i class="bi bi-arrow-clockwise"></i>
-            </a>
+            <?php
+            // Calculate the total number of pages
+            $query = "SELECT COUNT(*) AS total FROM alerts";
+            $result = mysqli_query($conn, $query);
+            $row = mysqli_fetch_assoc($result);
+            $total = $row['total'];
+            ?>
+
+            <div>
+                <div class="float-start">
+                    <?php echo $total; ?>
+                </div>
+                <div class="float-end">
+                    <a class="text-decoration-none text-secondary fs-3" href="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </a>
+                </div>
+            </div>
+
+            
 
             <table class="table table-bordered mt-2">
                 <thead>
