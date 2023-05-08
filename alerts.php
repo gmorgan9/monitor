@@ -87,8 +87,8 @@ session_start();
     // Calculate the total number of pages
     $query = "SELECT COUNT(*) AS total FROM alerts";
     $result = mysqli_query($conn, $query);
-    $row = mysqli_fetch_assoc($result);
-    $totalPages = ceil($row['total'] / $recordsPerPage);
+    $b = mysqli_fetch_assoc($result);
+    $totalPages = ceil($b['total'] / $recordsPerPage);
     ?>
 
     <nav>
