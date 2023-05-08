@@ -131,7 +131,7 @@ foreach ($jsonLines as $index => $line) {
     $checkResult = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
-        echo "Record with idno $idno already exists. Skipping for line " . ($index + 1) . "<br>";
+        // echo "Record with idno $idno already exists. Skipping for line " . ($index + 1) . "<br>";
         continue; // Skip to the next line
     }
 
