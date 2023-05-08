@@ -135,7 +135,7 @@ mysqli_close($conn);
                         <td><?php echo $class; ?></td>
                     </tr>
                     <?php
-                }
+                // }
         ?>
             </tbody>
         </table>
