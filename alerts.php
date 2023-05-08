@@ -40,8 +40,8 @@ session_start();
 
             <div>
                 <div class="float-start">
-                    <p>
-                        <?php echo $total; ?> Alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
+                    <p class="text-secondary fs-6">
+                        <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
                     </p>
                 </div>
                 <div class="float-end">
