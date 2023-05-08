@@ -205,22 +205,22 @@ mysqli_close($conn);
 
                     <?php
                     // Check the connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+// if (!$conn) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
 
 // Select the data from the table
 $sql = "SELECT id, seconds, action, class FROM alerts";
-$result = mysqli_query($conn, $sql);
+$alert = mysqli_query($conn, $sql);
 
 // Check if there are any results
-if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($alert) > 0) {
     // Loop through each row of data
-    while ($row = mysqli_fetch_assoc($result)) {
-        $id = $row['id'];
-        $seconds = $row['seconds'];
-        $action = $row['action'];
-        $class = $row['class'];
+    while ($a = mysqli_fetch_assoc($alert)) {
+        $id = $a['id'];
+        $seconds = $a['seconds'];
+        $action = $a['action'];
+        $class = $a['class'];
 
         // Format the timestamp as desired
         $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
