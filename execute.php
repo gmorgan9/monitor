@@ -75,7 +75,7 @@ foreach ($jsonLines as $index => $line) {
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
-    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp) VALUES ('$idno', '$seconds', '$msg', '$class', '$formattedTimestamp')";
+    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp) VALUES ('$idno', '$seconds', '$msg', '$class', '$timestamp')";
     mysqli_query($conn, $sql);
     // Execute the SQL statement
     // if (mysqli_query($conn, $sql)) {
