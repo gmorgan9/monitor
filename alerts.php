@@ -12,31 +12,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Scripts -->
-    <script>
-        $(document).ready(function() {
-            // Function to execute PHP code and update the table
-            function refreshTable() {
-                $.ajax({
-                    url: "execute.php",
-                    type: "POST",
-                    success: function() {
-                        // On successful execution, refresh the table content
-                        $("#tableContainer").load("table.php");
-                    },
-                    error: function() {
-                        // Handle errors if any
-                        alert("Error refreshing table.");
-                    }
-                });
-            }
 
-            // Event handler for the refresh button click
-            $("#refreshButton").click(function() {
-                refreshTable();
-            });
-        });
-    </script>
 
     <!-- links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
@@ -50,11 +26,9 @@ session_start();
     <div class="container">
 
 <br><br><br>
-<a href="<?php $_SERVER['PHP_SELF']; ?>">Recargar</a>
-<button id="refreshButton" class="btn btn-primary">Refresh Table</button>
-<form method="post" action="execute.php">
-        <button type="submit">Execute PHP Code</button>
-    </form>
+
+<button id="refreshButton" class="btn btn-primary"><a href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a></button>
+
 
         <table class="table table-bordered mt-2">
             <thead>
