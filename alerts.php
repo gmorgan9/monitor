@@ -55,10 +55,9 @@ session_start();
                 <thead>
                     <tr>
                         <th>Alert ID</th>
-                        <th>Seconds</th>
-                        <th>Action</th>
-                        <th>Class</th>
                         <th>Timestamp</th>
+                        <th>Summary</th>
+                        <th>Class</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -82,16 +81,16 @@ session_start();
                             $id = $a['id'];
                             $seconds = $a['seconds'];
                             $action = $a['action'];
+                            $msg = $a['msg'];
                             $class = $a['class'];
                             $timestamp = $a['timestamp'];
 
                             // Display the data in the specified format
                             echo "<tr>";
                             echo "<td>" . $id . "</td>";
-                            echo "<td>" . $seconds . "</td>";
-                            echo "<td>" . $action . "</td>";
-                            echo "<td>" . $class . "</td>";
                             echo "<td>" . $timestamp . "</td>";
+                            echo "<td>" . $msg . "</td>";
+                            echo "<td>" . $class . "</td>";
                             echo "</tr>";
                         }
                     } else {
