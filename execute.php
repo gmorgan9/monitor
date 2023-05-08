@@ -59,7 +59,7 @@ foreach ($jsonLines as $index => $line) {
     $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
 
     $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
-    $formattedTimestamp = $dateTime->format('Y-m-d'+"T"+'H:i:s');
+    $formattedTimestamp = $dateTime->format('Y-m-d\TH:i:s');
 
     // Check if the record already exists with the same idno
     $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";
