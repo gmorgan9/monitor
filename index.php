@@ -7,6 +7,11 @@
     <title>Monitoring</title>
 </head>
 <body>
-    Morgan House Monitoring
+    <h1>Alert Monitoring</h1>
+    <nav>
+        <li>
+            <a href="/alerts.php">Alerts</a>
+        </li>
+    </nav>
 </body>
 </html>
