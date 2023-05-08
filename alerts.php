@@ -16,9 +16,6 @@ session_start();
 
     <!-- links -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
 
     <title>Alerts</title>
 </head>
@@ -97,6 +94,8 @@ session_start();
     <nav>
         <ul class="pagination justify-content-center">
             <?php
+            echo $totalPages;
+            echo $currentPage;
             // Display pagination links
             for ($i = 1; $i <= $totalPages; $i++) {
                 echo "<li class='page-item " . ($i == $currentPage ? 'active' : '') . "'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
