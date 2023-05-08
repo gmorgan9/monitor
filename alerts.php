@@ -49,12 +49,13 @@ session_start();
     <div class="container">
 
 <br><br><br>
+<a href="<?php $_SERVER['PHP_SELF']; ?>">Recargar</a>
 <button id="refreshButton" class="btn btn-primary">Refresh Table</button>
 <form method="post" action="execute.php">
         <button type="submit">Execute PHP Code</button>
     </form>
 
-        <!-- <table class="table table-bordered mt-2">
+        <table class="table table-bordered mt-2">
             <thead>
                 <tr>
                     <th>Alert ID</th>
@@ -292,11 +293,8 @@ if (mysqli_num_rows($alert) > 0) {
 mysqli_close($conn);
 ?>
             </tbody>
-        </table> -->
+        </table>
 
-        <div id="tableContainer">
-        <!-- Table content will be loaded here -->
-    </div>
 
 
     </div>
