@@ -38,15 +38,7 @@ session_start();
 $jsonFile = '/usr/local/etc/snort/alert_json.txt';
 
 // Read the JSON file
-$jsonContent = file_get_contents($jsonFile);
-
-// Parse the JSON data into an array of associative arrays
-$data = json_decode($jsonContent, true);
-
-// Check if the JSON data is valid
-if ($data === null) {
-    die("Error parsing JSON data");
-}
+$jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
 
 // Create a database connection
 // $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -56,11 +48,21 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Extract the necessary data and prepare SQL statements
-foreach ($data as $item) {
-    $seconds = mysqli_real_escape_string($conn, $item["seconds"]);
-    $action = mysqli_real_escape_string($conn, $item["action"]);
-    $class = mysqli_real_escape_string($conn, $item["class"]);
+// Iterate over each line in the JSON file
+foreach ($jsonLines as $index => $line) {
+    // Parse the JSON data from each line into an associative array
+    $data = json_decode($line, true);
+
+    // Check if the JSON data is valid
+    if ($data === null) {
+        echo "Error parsing JSON data on line " . ($index + 1);
+        continue; // Skip to the next line
+    }
+
+    // Extract the necessary data and prepare SQL statements
+    $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
+    $action = mysqli_real_escape_string($conn, $data["action"]);
+    $class = mysqli_real_escape_string($conn, $data["class"]);
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
@@ -68,14 +70,15 @@ foreach ($data as $item) {
 
     // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
-        echo "Data inserted successfully.";
+        echo "Data inserted successfully for line " . ($index + 1) . "<br>";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
     }
 }
 
 // Close the database connection
 mysqli_close($conn);
+
 
 
 
