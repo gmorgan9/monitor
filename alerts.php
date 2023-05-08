@@ -34,24 +34,30 @@ session_start();
             </thead>
             <tbody>
                 <?php
-                // // Path to the JSON file
-                $jsonFile = '/usr/local/etc/snort/alert_json.txt';
-                // Read the JSON file
+                // Path to the JSON file
+$jsonFile = '/usr/local/etc/snort/alert_json.txt';
+
+// Read the JSON file
 $jsonContent = file_get_contents($jsonFile);
 
-// Parse the JSON data into an associative array
+// Parse the JSON data into an array of associative arrays
+$data = json_decode($jsonContent, true);
 
-$jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
 // Check if the JSON data is valid
-if ($jsonLines === null) {
+if ($data === null) {
     die("Error parsing JSON data");
 }
 
+// Create a database connection
+// $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check the connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
 // Extract the necessary data and prepare SQL statements
-foreach ($jsonLines as $item) {
-
-    $data = json_decode($item, true);
-
+foreach ($data as $item) {
     $seconds = mysqli_real_escape_string($conn, $item["seconds"]);
     $action = mysqli_real_escape_string($conn, $item["action"]);
     $class = mysqli_real_escape_string($conn, $item["class"]);
@@ -59,7 +65,6 @@ foreach ($jsonLines as $item) {
 
     // Prepare the SQL insert statement
     $sql = "INSERT INTO alerts (seconds, action, class) VALUES ('$seconds', '$action', '$class')";
-    // Replace 'your_table_name' with the actual table name where you want to store the data
 
     // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
@@ -71,6 +76,7 @@ foreach ($jsonLines as $item) {
 
 // Close the database connection
 mysqli_close($conn);
+
 
 
 
