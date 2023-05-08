@@ -143,11 +143,11 @@ foreach ($jsonLines as $index => $line) {
     $sql = "INSERT INTO alerts (idno, seconds, action, class) VALUES ('$idno', '$seconds', '$action', '$class')";
 
     // Execute the SQL statement
-    if (mysqli_query($conn, $sql)) {
-        echo "Data inserted successfully for line " . ($index + 1) . "<br>";
-    } else {
-        echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
-    }
+    // if (mysqli_query($conn, $sql)) {
+    //     echo "Data inserted successfully for line " . ($index + 1) . "<br>";
+    // } else {
+    //     echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
+    // }
 }
 
 // Close the database connection
