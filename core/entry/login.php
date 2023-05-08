@@ -16,7 +16,7 @@ if(isset($_POST['login-btn'])){
 	$uid = mysqli_real_escape_string($conn, $_POST['user_id']);
 	$fname = mysqli_real_escape_string($conn, $_POST['firstname']);
 	$lname = mysqli_real_escape_string($conn, $_POST['lastname']);
-	$uname = mysqli_real_escape_string($conn, $_POST['username']);
+	$uname = mysqli_real_escape_string($conn, $_POST['uname']);
 	$email = mysqli_real_escape_string($conn, $_POST['email']);
 	$pass = md5($_POST['password']);
 	// $cpass = md5($_POST['cpassword']);
@@ -83,7 +83,7 @@ if(isset($_POST['login-btn'])){
          };
       };
       ?>
-      <input type="text" name="uname" required placeholder="enter your user name">
+      <input type="text" name="username" required placeholder="enter your user name">
       <input type="password" name="password" required placeholder="enter your password">
       <input type="submit" name="login-btn" value="Login" class="form-btn">
       <p>don't have an account? <a href="/pages/entry/register.php">register now</a></p>
