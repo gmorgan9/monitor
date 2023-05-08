@@ -12,6 +12,7 @@
             </li>
         </ul>
     </nav>
+    
     <table class="table table-bordered">
         <thead>
             <tr>
