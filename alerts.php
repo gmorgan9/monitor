@@ -24,6 +24,9 @@ session_start();
 
 <br><br><br>
 <button id="refreshButton" class="btn btn-primary">Refresh Table</button>
+<form method="post" action="execute.php">
+        <button type="submit">Execute PHP Code</button>
+    </form>
 
         <table class="table table-bordered mt-2">
             <thead>
