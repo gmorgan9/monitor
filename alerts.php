@@ -22,6 +22,8 @@ session_start();
     
     <div class="container">
 
+<br><br><br>
+<button id="refreshButton" class="btn btn-primary">Refresh Table</button>
 
         <table class="table table-bordered mt-2">
             <thead>
@@ -269,6 +271,29 @@ mysqli_close($conn);
 
     
 
+    <script>
+        // Function to refresh the table
+function refreshTable() {
+    $.ajax({
+        url: 'refresh_table.php', // Replace with the actual PHP file or URL that fetches the updated table data
+        method: 'GET',
+        success: function(data) {
+            $('#tableContainer').html(data); // Replace 'tableContainer' with the ID or class of the element containing your table
+        },
+        error: function() {
+            alert('Error occurred while refreshing the table.');
+        }
+    });
+}
+
+// Event listener for the refresh button
+$(document).ready(function() {
+    $('#refreshButton').click(function() {
+        refreshTable();
+    });
+});
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
