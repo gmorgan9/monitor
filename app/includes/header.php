@@ -21,7 +21,7 @@
         <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
     <?php //}?>
       <!-- Container wrapper -->
-    <div class="container-fluid">
+    <div class="container">
 
 <!-- Brand -->
         <a class="navbar-brand" href="/">
