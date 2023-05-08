@@ -147,7 +147,7 @@ foreach ($jsonLines as $index => $line) {
     $checkResult = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
-        // echo "Record with idno $idno already exists. Skipping for line " . ($index + 1) . "<br>";
+        echo "Record with idno $idno already exists. Skipping for line " . ($index + 1) . "<br>";
         continue; // Skip to the next line
     }
 
@@ -158,11 +158,11 @@ foreach ($jsonLines as $index => $line) {
     // Prepare the SQL insert statement
     $sql = "INSERT INTO alerts (idno, seconds, action, class, timestamp) VALUES ('$idno', '$seconds', '$action', '$class', '$formattedTimestamp')";
     // Execute the SQL statement
-    // if (mysqli_query($conn, $sql)) {
-    //     echo "Data inserted successfully for line " . ($index + 1) . "<br>";
-    // } else {
-    //     echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
-    // }
+    if (mysqli_query($conn, $sql)) {
+        echo "Data inserted successfully for line " . ($index + 1) . "<br>";
+    } else {
+        echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
+    }
 }
 
 // Close the database connection
