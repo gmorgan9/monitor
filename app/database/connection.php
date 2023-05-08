@@ -1,6 +1,6 @@
 <!-- WORKING -->
 <?php
-date_default_timezone_set('America/Denver');
+// date_default_timezone_set('America/Denver');
 
 
 $servername = "127.0.0.1";
