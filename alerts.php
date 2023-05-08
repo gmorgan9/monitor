@@ -169,7 +169,7 @@ foreach ($jsonLines as $index => $line) {
 }
 
 // Close the database connection
-// mysqli_close($conn);
+mysqli_close($conn);
 
 
 
@@ -226,7 +226,7 @@ foreach ($jsonLines as $index => $line) {
 // if (!$conn) {
 //     die("Connection failed: " . mysqli_connect_error());
 // }
-
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 // Select the data from the table
 $new = "SELECT * FROM alerts";
 $alert = mysqli_query($conn, $new);
