@@ -26,7 +26,7 @@ session_start();
     <!-- container -->
         <div class="container">
 
-            <button id="refreshButton" class="btn btn-primary mt-3"><a class="text-decoriation-none text-black" href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a></button>
+            <button id="refreshButton" class="btn btn-primary mt-3"><a class="text-decoration-none text-white" href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a></button>
 
             <table class="table table-bordered mt-2">
                 <thead>
