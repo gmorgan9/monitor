@@ -40,14 +40,15 @@ session_start();
 
             <div>
                 <div class="float-start">
+                <a class="text-decoration-none text-secondary" style="font-size: 14px;" href="<?php echo $_SERVER['PHP_SELF']; ?>">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </a>
                     <p class="text-secondary" style="font-size: 14px;">
                         <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
                     </p>
                 </div>
                 <div class="float-end">
-                    <a class="text-decoration-none text-secondary fs-3" href="<?php echo $_SERVER['PHP_SELF']; ?>">
-                        <i class="bi bi-arrow-clockwise"></i>
-                    </a>
+                    
                 </div>
             </div>
 
