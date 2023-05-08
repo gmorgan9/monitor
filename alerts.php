@@ -19,24 +19,6 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <title>Alerts</title>
-    <style>
-        .spinner {
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .hide {
-            display: none;
-        }
-    </style>
 </head>
 <body>
 
@@ -45,8 +27,8 @@ session_start();
     <!-- container -->
         <div class="container">
 
-            <a id="refreshLink" class="text-decoration-none text-secondary" href="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <i id="refreshIcon" class="bi bi-arrow-clockwise"></i>
+            <a class="text-decoration-none text-secondary fs-1 float-end" href="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <i class="bi bi-arrow-clockwise"></i>
             </a>
 
             <table class="table table-bordered mt-2">
@@ -123,22 +105,6 @@ session_start();
     <!-- end container -->
 
 
-    <script>
-    // Add an event listener to the refresh button link
-    document.getElementById('refreshLink').addEventListener('click', function () {
-        // Add the spinner class to the refresh icon
-        document.getElementById('refreshIcon').classList.add('spinner');
-
-        // Add the hide class to the refresh link to hide it
-        document.getElementById('refreshLink').classList.add('hide');
-    });
-
-    // Remove the spinner class and show the refresh link once the page finishes loading
-    window.addEventListener('load', function () {
-        document.getElementById('refreshIcon').classList.remove('spinner');
-        document.getElementById('refreshLink').classList.remove('hide');
-    });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
