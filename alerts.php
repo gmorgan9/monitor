@@ -210,7 +210,7 @@ if (!$conn) {
 }
 
 // Select the data from the table
-$sql = "SELECT id, msg, timestamp, class FROM alerts";
+$sql = "SELECT id, seconds, action, class FROM alerts";
 $result = mysqli_query($conn, $sql);
 
 // Check if there are any results
@@ -218,8 +218,8 @@ if (mysqli_num_rows($result) > 0) {
     // Loop through each row of data
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['id'];
-        $msg = $row['msg'];
-        $timestamp = $row['timestamp'];
+        $seconds = $row['seconds'];
+        $action = $row['action'];
         $class = $row['class'];
 
         // Format the timestamp as desired
@@ -228,8 +228,8 @@ if (mysqli_num_rows($result) > 0) {
         // Display the data in the specified format
         echo "<tr>";
         echo "<td>" . $id . "</td>";
-        echo "<td>" . $msg . "</td>";
-        echo "<td>" . $formattedTimestamp . "</td>";
+        echo "<td>" . $seconds . "</td>";
+        echo "<td>" . $action . "</td>";
         echo "<td>" . $class . "</td>";
         echo "</tr>";
     }
