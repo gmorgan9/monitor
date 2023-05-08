@@ -5,6 +5,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/css/bootstrap.min.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+        </ul>
+    </nav>
     <table class="table table-bordered">
         <thead>
             <tr>
