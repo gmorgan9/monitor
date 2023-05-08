@@ -29,7 +29,7 @@ if (mysqli_num_rows($result) > 0) {
         </a>
 
         <ul class="navbar-nav ms-auto d-flex flex-row">
-            <?php if(isset($_SESSION['fname'])){ ?>
+            <?php if(isset($row['fname'])){ ?>
             <?php //if($row['acc_type'] == 1){ ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0">Welcome, <span style="text-transform: capitalize;"><?php echo $fname; ?></span>!</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/">Home</a></li>
