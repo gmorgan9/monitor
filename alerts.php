@@ -129,7 +129,7 @@ foreach ($jsonLines as $index => $line) {
     $timestamp = mysqli_real_escape_string($conn, $data["timestamp"]);
 
     // Check if the record already exists with the same idno
-    $checkQuery = "SELECT * FROM alerts WHERE timestamp = '$timestamp'";
+    $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";
     $checkResult = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
