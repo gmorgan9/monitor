@@ -45,21 +45,21 @@ foreach ($jsonLines as $index => $line) {
     $class = mysqli_real_escape_string($conn, $data["class"]);
     $timestamp = mysqli_real_escape_string($conn, $data["timestamp"]);
 
-    $dateTimeParts = explode('-', $timestamp);
-    $datePart = $dateTimeParts[0];
-    $timePart = $dateTimeParts[1];
+    // $dateTimeParts = explode('-', $timestamp);
+    // $datePart = $dateTimeParts[0];
+    // $timePart = $dateTimeParts[1];
 
-    $dateParts = explode('/', $datePart);
-    $month = $dateParts[0];
-    $day = $dateParts[1];
+    // $dateParts = explode('/', $datePart);
+    // $month = $dateParts[0];
+    // $day = $dateParts[1];
 
-    $timeParts = explode(':', $timePart);
-    $hour = $timeParts[0];
-    $minute = $timeParts[1];
-    $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
+    // $timeParts = explode(':', $timePart);
+    // $hour = $timeParts[0];
+    // $minute = $timeParts[1];
+    // $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
 
-    $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
-    $formattedTimestamp = $dateTime->format('M d, Y h:i A');
+    // $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
+    // $formattedTimestamp = $dateTime->format('M d, Y h:i A');
 
     // Check if the record already exists with the same idno
     $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";

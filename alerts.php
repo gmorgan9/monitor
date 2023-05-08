@@ -86,20 +86,20 @@ session_start();
                             $timestamp = $a['timestamp'];
                     ?>
 
-                    <tr>
-                        <td><?php echo $id; ?></td>
-                        <td><?php echo $timestamp; ?></td>
-                        <td><?php echo $msg; ?></td>
-                        <td><?php echo $class; ?></td>
-                    </tr>
-
-                            <!-- // Display the data in the specified format
-                            echo "<tr>";
-                            echo "<td>" . $id . "</td>";
-                            echo "<td>" . $timestamp . "</td>";
-                            echo "<td>" . $msg . "</td>";
-                            echo "<td>" . $class . "</td>";
-                            echo "</tr>"; -->
+                        <tr>
+                            <td>
+                                <?php echo $id; ?>
+                            </td>
+                            <td>
+                                <?php echo $timestamp; ?>
+                            </td>
+                            <td>
+                                <?php echo $msg; ?>
+                            </td>
+                            <td>
+                                <?php echo $class; ?>
+                            </td>
+                        </tr>
 
                     <?php
                         }
