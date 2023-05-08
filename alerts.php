@@ -39,8 +39,8 @@ session_start();
             ?>
 
             <div>
-                <div class="float-start">
-                <a class="text-decoration-none text-secondary" style="font-size: 14px;" href="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <div class="float-start d-flex">
+                    <a class="text-decoration-none text-secondary" style="font-size: 16px;" href="<?php echo $_SERVER['PHP_SELF']; ?>">
                         <i class="bi bi-arrow-clockwise"></i>
                     </a>
                     <p class="text-secondary" style="font-size: 14px;">
