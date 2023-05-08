@@ -122,9 +122,12 @@ foreach ($jsonLines as $index => $line) {
 
     // Generate a random identifier
     $idno = generateRandomNumber();
+    $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
+    $action = mysqli_real_escape_string($conn, $data["action"]);
+    $class = mysqli_real_escape_string($conn, $data["class"]);
 
     // Check if the record already exists with the same idno
-    $checkQuery = "SELECT * FROM alerts WHERE idno = '$idno'";
+    $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";
     $checkResult = mysqli_query($conn, $checkQuery);
 
     if (mysqli_num_rows($checkResult) > 0) {
@@ -133,9 +136,7 @@ foreach ($jsonLines as $index => $line) {
     }
 
     // Extract the necessary data and prepare SQL statements
-    $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
-    $action = mysqli_real_escape_string($conn, $data["action"]);
-    $class = mysqli_real_escape_string($conn, $data["class"]);
+    
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
