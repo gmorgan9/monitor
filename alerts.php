@@ -151,7 +151,7 @@ foreach ($jsonLines as $index => $line) {
 }
 
 // Close the database connection
-mysqli_close($conn);
+// mysqli_close($conn);
 
 
 
