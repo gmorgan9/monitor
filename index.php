@@ -7,6 +7,8 @@
     <title>Monitoring</title>
 </head>
 <body>
+<?php include("app/includes/header.php"); ?>
+
     <h1>Alert Monitoring</h1>
     <nav>
         <li>
