@@ -35,6 +35,67 @@ session_start();
             <tbody>
                 <?php
                 // Path to the JSON file
+// $jsonFile = '/usr/local/etc/snort/alert_json.txt';
+
+// // Read the JSON file
+// $jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
+
+// // Create a database connection
+// // $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+// // Check the connection
+// if (!$conn) {
+//     die("Connection failed: " . mysqli_connect_error());
+// }
+
+// // Iterate over each line in the JSON file
+// foreach ($jsonLines as $index => $line) {
+//     // Parse the JSON data from each line into an associative array
+//     $data = json_decode($line, true);
+
+//     // Check if the JSON data is valid
+//     if ($data === null) {
+//         echo "Error parsing JSON data on line " . ($index + 1);
+//         continue; // Skip to the next line
+//     }
+
+//     // Extract the necessary data and prepare SQL statements
+//     $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
+//     $action = mysqli_real_escape_string($conn, $data["action"]);
+//     $class = mysqli_real_escape_string($conn, $data["class"]);
+//     // Extract other required fields as needed
+
+//     // Prepare the SQL insert statement
+//     $sql = "INSERT INTO alerts (seconds, action, class) VALUES ('$seconds', '$action', '$class')";
+
+//     // Execute the SQL statement
+//     if (mysqli_query($conn, $sql)) {
+//         echo "Data inserted successfully for line " . ($index + 1) . "<br>";
+//     } else {
+//         echo "Error inserting data for line " . ($index + 1) . ": " . mysqli_error($conn) . "<br>";
+//     }
+// }
+
+// // Close the database connection
+// mysqli_close($conn);
+
+
+
+// NEWWWWWWWWWWWWWWWWWWWW
+
+// Function to generate a random string of numbers
+function generateRandomNumber($length = 8) {
+    $characters = '0123456789';
+    $randomString = '';
+    $max = strlen($characters) - 1;
+
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[mt_rand(0, $max)];
+    }
+
+    return $randomString;
+}
+
 $jsonFile = '/usr/local/etc/snort/alert_json.txt';
 
 // Read the JSON file
@@ -59,6 +120,18 @@ foreach ($jsonLines as $index => $line) {
         continue; // Skip to the next line
     }
 
+    // Generate a random identifier
+    $idno = generateRandomNumber();
+
+    // Check if the record already exists with the same idno
+    $checkQuery = "SELECT * FROM alerts WHERE idno = '$idno'";
+    $checkResult = mysqli_query($conn, $checkQuery);
+
+    if (mysqli_num_rows($checkResult) > 0) {
+        echo "Record with idno $idno already exists. Skipping for line " . ($index + 1) . "<br>";
+        continue; // Skip to the next line
+    }
+
     // Extract the necessary data and prepare SQL statements
     $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
     $action = mysqli_real_escape_string($conn, $data["action"]);
@@ -66,7 +139,7 @@ foreach ($jsonLines as $index => $line) {
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
-    $sql = "INSERT INTO alerts (seconds, action, class) VALUES ('$seconds', '$action', '$class')";
+    $sql = "INSERT INTO alerts (idno, seconds, action, class) VALUES ('$idno', '$seconds', '$action', '$class')";
 
     // Execute the SQL statement
     if (mysqli_query($conn, $sql)) {
@@ -78,6 +151,7 @@ foreach ($jsonLines as $index => $line) {
 
 // Close the database connection
 mysqli_close($conn);
+
 
 
 
