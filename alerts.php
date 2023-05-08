@@ -250,7 +250,7 @@ if (mysqli_num_rows($alert) > 0) {
         echo "<td>" . $seconds . "</td>";
         echo "<td>" . $action . "</td>";
         echo "<td>" . $class . "</td>";
-        echo "<td>" . $formattedTimestamp . "</td>";
+        echo "<td>" . $timestamp . "</td>";
         echo "</tr>";
     }
 } else {
