@@ -225,8 +225,24 @@ if (mysqli_num_rows($alert) > 0) {
         $class = $a['class'];
         $timestamp = $a['timestamp'];
 
+        $dateTimeParts = explode('-', $timestamp);
+        $datePart = $dateTimeParts[0];
+        $timePart = $dateTimeParts[1];
+
+        $dateParts = explode('/', $datePart);
+        $month = $dateParts[0];
+        $day = $dateParts[1];
+
+        $timeParts = explode(':', $timePart);
+        $hour = $timeParts[0];
+        $minute = $timeParts[1];
+        $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
+
+        $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
+        $formattedTimestamp = $dateTime->format('M d, Y h:i A');
+
         // Format the timestamp as desired
-        $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
+        // $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
 
         // Display the data in the specified format
         echo "<tr>";
@@ -234,7 +250,7 @@ if (mysqli_num_rows($alert) > 0) {
         echo "<td>" . $seconds . "</td>";
         echo "<td>" . $action . "</td>";
         echo "<td>" . $class . "</td>";
-        echo "<td>" . $timestamp . "</td>";
+        echo "<td>" . $formattedTimestamp . "</td>";
         echo "</tr>";
     }
 } else {
