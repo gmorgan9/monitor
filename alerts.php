@@ -25,64 +25,85 @@ session_start();
     
     <div class="container">
 
-<br><br><br>
+    <br><br><br>
 
-<button id="refreshButton" class="btn btn-primary"><a href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a></button>
+    <button id="refreshButton" class="btn btn-primary"><a href="<?php $_SERVER['PHP_SELF']; ?>">Refresh</a></button>
 
+    <table class="table table-bordered mt-2">
+        <thead>
+            <tr>
+                <th>Alert ID</th>
+                <th>Seconds</th>
+                <th>Action</th>
+                <th>Class</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            // Define the number of records per page
+            $recordsPerPage = 10;
 
-        <table class="table table-bordered mt-2">
-            <thead>
-                <tr>
-                    <th>Alert ID</th>
-                    <th>Seconds</th>
-                    <th>Action</th>
-                    <th>Class</th>
-                    <th>Timestamp</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                // Select the data from the table
-                $new = "SELECT * FROM alerts";
-                $alert = mysqli_query($conn, $new);
-                
-                // Check if there are any results
-                if (mysqli_num_rows($alert) > 0) {
-                    // Loop through each row of data
-                    while ($a = mysqli_fetch_assoc($alert)) {
-                        $id = $a['id'];
-                        $seconds = $a['seconds'];
-                        $action = $a['action'];
-                        $class = $a['class'];
-                        $timestamp = $a['timestamp'];
-                    
-                        
-                    
-                        // Format the timestamp as desired
-                        // $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
-                    
-                        // Display the data in the specified format
-                        echo "<tr>";
-                        echo "<td>" . $id . "</td>";
-                        echo "<td>" . $seconds . "</td>";
-                        echo "<td>" . $action . "</td>";
-                        echo "<td>" . $class . "</td>";
-                        echo "<td>" . $timestamp . "</td>";
-                        echo "</tr>";
-                    }
-                } else {
-                    echo "No data found.";
+            // Get the current page number from the URL query string
+            $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+
+            // Calculate the starting record for the current page
+            $startFrom = ($currentPage - 1) * $recordsPerPage;
+
+            // Select the data from the table with pagination
+            $query = "SELECT * FROM alerts LIMIT $startFrom, $recordsPerPage";
+            $result = mysqli_query($conn, $query);
+
+            // Check if there are any results
+            if (mysqli_num_rows($result) > 0) {
+                // Loop through each row of data
+                while ($a = mysqli_fetch_assoc($result)) {
+                    $id = $a['id'];
+                    $seconds = $a['seconds'];
+                    $action = $a['action'];
+                    $class = $a['class'];
+                    $timestamp = $a['timestamp'];
+
+                    // Display the data in the specified format
+                    echo "<tr>";
+                    echo "<td>" . $id . "</td>";
+                    echo "<td>" . $seconds . "</td>";
+                    echo "<td>" . $action . "</td>";
+                    echo "<td>" . $class . "</td>";
+                    echo "<td>" . $timestamp . "</td>";
+                    echo "</tr>";
                 }
-                
-                // Close the database connection
-                mysqli_close($conn);
-                ?>
-            </tbody>
-        </table>
+            } else {
+                echo "No data found.";
+            }
 
+            // Close the database connection
+            mysqli_close($conn);
+            ?>
+        </tbody>
+    </table>
 
+    <?php
+    // Calculate the total number of pages
+    $query = "SELECT COUNT(*) AS total FROM alerts";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+    $totalPages = ceil($row['total'] / $recordsPerPage);
+    ?>
 
-    </div>
+    <nav>
+        <ul class="pagination justify-content-center">
+            <?php
+            // Display pagination links
+            for ($i = 1; $i <= $totalPages; $i++) {
+                echo "<li class='page-item " . ($i == $currentPage ? 'active' : '') . "'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
+            }
+            ?>
+        </ul>
+    </nav>
+
+</div>
+
 
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
