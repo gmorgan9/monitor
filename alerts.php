@@ -40,15 +40,18 @@ session_start();
 $jsonContent = file_get_contents($jsonFile);
 
 // Parse the JSON data into an associative array
-$data = json_decode($jsonContent, true);
 
+$jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
 // Check if the JSON data is valid
-if ($data === null) {
+if ($jsonLines === null) {
     die("Error parsing JSON data");
 }
 
 // Extract the necessary data and prepare SQL statements
-foreach ($data as $item) {
+foreach ($jsonLines as $item) {
+
+    $data = json_decode($item, true);
+
     $seconds = mysqli_real_escape_string($conn, $item["seconds"]);
     $action = mysqli_real_escape_string($conn, $item["action"]);
     $class = mysqli_real_escape_string($conn, $item["class"]);
