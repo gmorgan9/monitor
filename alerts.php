@@ -76,9 +76,6 @@ session_start();
             } else {
                 echo "No data found.";
             }
-
-            // Close the database connection
-            mysqli_close($conn);
             ?>
         </tbody>
     </table>
@@ -87,8 +84,8 @@ session_start();
     // Calculate the total number of pages
     $query = "SELECT COUNT(*) AS total FROM alerts";
     $result = mysqli_query($conn, $query);
-    $b = mysqli_fetch_assoc($result);
-    $totalPages = ceil($b['total'] / $recordsPerPage);
+    $row = mysqli_fetch_assoc($result);
+    $totalPages = ceil($row['total'] / $recordsPerPage);
     ?>
 
     <nav>
