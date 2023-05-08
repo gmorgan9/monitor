@@ -38,19 +38,15 @@ session_start();
             $totalPages = ceil($row['total'] / $recordsPerPage);
             ?>
 
-            <div>
-                <div class="float-start d-flex">
-                    <a class="text-decoration-none text-secondary" style="font-size: 16px;" href="<?php echo $_SERVER['PHP_SELF']; ?>">
-                        <i class="bi bi-arrow-clockwise"></i>
-                    </a>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <p class="text-secondary" style="font-size: 14px;">
-                        <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
-                    </p>
-                </div>
-                <div class="float-end">
-                    
-                </div>
+ 
+            <div class="float-start d-flex mt-3">
+                <a class="text-decoration-none text-secondary" style="font-size: 16px;" href="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <i class="bi bi-arrow-clockwise"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-secondary" style="font-size: 14px;">
+                    <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
+                </p>
             </div>
 
             
