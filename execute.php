@@ -21,8 +21,6 @@ $jsonFile = '/usr/local/etc/snort/alert_json.txt';
 // Read the JSON file
 $jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
 
-// Create a database connection
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 // Check the connection
 if (!$conn) {
