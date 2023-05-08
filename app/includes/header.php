@@ -7,7 +7,7 @@ $result = mysqli_query($conn, $select);
 if (mysqli_num_rows($result) > 0) {
    while($row = mysqli_fetch_assoc($result)) {
     $fname = $row['firstname'];
-}}
+// }}
 ?>
 
 
@@ -42,6 +42,9 @@ if (mysqli_num_rows($result) > 0) {
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/core/entry/login.php' ?>">Login/Signup</a></li>
             <?php } ?>
         </ul>
+        <?php
+    }}
+?>
     </div>
 <!-- Container wrapper -->
 </nav>
