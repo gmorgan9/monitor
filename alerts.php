@@ -28,16 +28,21 @@ session_start();
         <div class="container">
 
             <?php
+            $recordsPerPage = 10;
+            $curPage = isset($_GET['page']) ? $_GET['page'] : 1;
             // Calculate the total number of pages
             $query = "SELECT COUNT(*) AS total FROM alerts";
             $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($result);
             $total = $row['total'];
+            $totalPages = ceil($row['total'] / $recordsPerPage);
             ?>
 
             <div>
                 <div class="float-start">
-                    <?php echo $total; ?>
+                    <p>
+                        <?php echo $total; ?> Alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
+                    </p>
                 </div>
                 <div class="float-end">
                     <a class="text-decoration-none text-secondary fs-3" href="<?php echo $_SERVER['PHP_SELF']; ?>">
@@ -61,7 +66,6 @@ session_start();
                 <tbody>
                     <?php
                     // Define the number of records per page
-                    $recordsPerPage = 10;
 
                     // Get the current page number from the URL query string
                     $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
