@@ -210,8 +210,8 @@ mysqli_close($conn);
 // }
 
 // Select the data from the table
-$sql = "SELECT id, seconds, action, class FROM alerts";
-$alert = mysqli_query($conn, $sql);
+$new = "SELECT id, seconds, action, class FROM alerts";
+$alert = mysqli_query($conn, $new);
 
 // Check if there are any results
 if (mysqli_num_rows($alert) > 0) {
