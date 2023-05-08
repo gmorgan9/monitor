@@ -125,6 +125,7 @@ foreach ($jsonLines as $index => $line) {
     $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
     $action = mysqli_real_escape_string($conn, $data["action"]);
     $class = mysqli_real_escape_string($conn, $data["class"]);
+    $timestamp = mysqli_real_escape_string($conn, $data["timestamp"]);
 
     // Check if the record already exists with the same idno
     $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";
@@ -140,7 +141,7 @@ foreach ($jsonLines as $index => $line) {
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
-    $sql = "INSERT INTO alerts (idno, seconds, action, class) VALUES ('$idno', '$seconds', '$action', '$class')";
+    $sql = "INSERT INTO alerts (idno, seconds, action, class, timestamp) VALUES ('$idno', '$seconds', '$action', '$class', '$timestamp')";
 
     // Execute the SQL statement
     // if (mysqli_query($conn, $sql)) {
@@ -210,7 +211,7 @@ foreach ($jsonLines as $index => $line) {
 // }
 
 // Select the data from the table
-$new = "SELECT id, seconds, action, class FROM alerts";
+$new = "SELECT * FROM alerts";
 $alert = mysqli_query($conn, $new);
 
 // Check if there are any results
@@ -221,9 +222,10 @@ if (mysqli_num_rows($alert) > 0) {
         $seconds = $a['seconds'];
         $action = $a['action'];
         $class = $a['class'];
+        $timestamp = $a['timestamp'];
 
         // Format the timestamp as desired
-        // $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
+        $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
 
         // Display the data in the specified format
         echo "<tr>";
@@ -231,6 +233,7 @@ if (mysqli_num_rows($alert) > 0) {
         echo "<td>" . $seconds . "</td>";
         echo "<td>" . $action . "</td>";
         echo "<td>" . $class . "</td>";
+        echo "<td>" . $timestamp . "</td>";
         echo "</tr>";
     }
 } else {
