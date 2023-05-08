@@ -41,7 +41,7 @@
             <?php //} else { ?>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="/alerts.php">Alerts</a></li>
-                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php //echo BASE_URL . '/pages/entry/login.php' ?>">Login/Signup</a></li>
+                <li class="nav-item"><a class="nav-link me-3 me-lg-0" href="<?php echo BASE_URL . '/pages/entry/login.php' ?>">Login/Signup</a></li>
             <?php //} ?>
         </ul>
     </div>
