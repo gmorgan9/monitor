@@ -1,5 +1,9 @@
 <?php
 
+require_once "app/database/connection.php";
+require_once "path.php";
+
+
 function generateRandomNumber($length = 8) {
     $characters = '0123456789';
     $randomString = '';
