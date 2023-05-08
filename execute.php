@@ -3,6 +3,8 @@
 require_once "app/database/connection.php";
 require_once "path.php";
 
+date_default_timezone_set('UTC');
+
 
 function generateRandomNumber($length = 8) {
     $characters = '0123456789';
