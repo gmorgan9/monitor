@@ -223,7 +223,7 @@ if (mysqli_num_rows($alert) > 0) {
         $class = $a['class'];
 
         // Format the timestamp as desired
-        $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
+        // $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
 
         // Display the data in the specified format
         echo "<tr>";
