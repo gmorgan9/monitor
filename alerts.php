@@ -84,14 +84,24 @@ session_start();
                             $msg = $a['msg'];
                             $class = $a['class'];
                             $timestamp = $a['timestamp'];
+                    ?>
 
-                            // Display the data in the specified format
+                    <tr>
+                        <td><?php echo $id; ?></td>
+                        <td><?php echo $timestamp; ?></td>
+                        <td><?php echo $msg; ?></td>
+                        <td><?php echo $class; ?></td>
+                    </tr>
+
+                            <!-- // Display the data in the specified format
                             echo "<tr>";
                             echo "<td>" . $id . "</td>";
                             echo "<td>" . $timestamp . "</td>";
                             echo "<td>" . $msg . "</td>";
                             echo "<td>" . $class . "</td>";
-                            echo "</tr>";
+                            echo "</tr>"; -->
+
+                    <?php
                         }
                     } else {
                         echo "No data found.";
