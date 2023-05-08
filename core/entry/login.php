@@ -29,7 +29,7 @@ if(isset($_POST['login-btn'])){
 	   $row = mysqli_fetch_array($result);
 	   $sql = "UPDATE users SET loggedin='1' WHERE username='$uname'";
 	   mysqli_query($conn, $sql);
-		$_SESSION['fname']           = $row['fisrtname'];
+		$_SESSION['fname']           = $row['firstname'];
 		$_SESSION['uid']             = $row['user_id'];
 		$_SESSION['loggedin']        = $row['loggedin'];
 		$_SESSION['employee_idno']   = $row['idno'];
