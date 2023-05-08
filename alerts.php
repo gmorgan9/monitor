@@ -203,15 +203,43 @@ mysqli_close($conn);
 
                     ?>
 
-                    <tr>
-                        <td><?php echo $id; ?></td>
-                        <td><?php echo $msg; ?></td>
-                        <td><?php echo $formattedTimestamp; ?></td>
-                        <td><?php echo $class; ?></td>
-                    </tr>
                     <?php
-                // }
-        ?>
+                    // Check the connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Select the data from the table
+$sql = "SELECT id, msg, timestamp, class FROM alerts";
+$result = mysqli_query($conn, $sql);
+
+// Check if there are any results
+if (mysqli_num_rows($result) > 0) {
+    // Loop through each row of data
+    while ($row = mysqli_fetch_assoc($result)) {
+        $id = $row['id'];
+        $msg = $row['msg'];
+        $timestamp = $row['timestamp'];
+        $class = $row['class'];
+
+        // Format the timestamp as desired
+        $formattedTimestamp = date("Y-m-d H:i:s", strtotime($timestamp));
+
+        // Display the data in the specified format
+        echo "<tr>";
+        echo "<td>" . $id . "</td>";
+        echo "<td>" . $msg . "</td>";
+        echo "<td>" . $formattedTimestamp . "</td>";
+        echo "<td>" . $class . "</td>";
+        echo "</tr>";
+    }
+} else {
+    echo "No data found.";
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
             </tbody>
         </table>
 
