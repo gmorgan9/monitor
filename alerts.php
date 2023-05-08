@@ -27,9 +27,10 @@ session_start();
             <thead>
                 <tr>
                     <th>Alert ID</th>
-                    <th>Message</th>
-                    <th>Timestamp</th>
+                    <th>Seconds</th>
+                    <th>Action</th>
                     <th>Class</th>
+                    <th>Timestamp</th>
                 </tr>
             </thead>
             <tbody>
