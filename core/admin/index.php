@@ -68,12 +68,20 @@ if (!isAdmin()) {
                         <td><?php echo $idno; ?></td>
                         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
                         <td><?php echo $uname; ?></td>
+
                         <?php if($admin == 1) { ?>
                             <td>Admin</td>
                         <?php } else { ?>
                             <td>Standard</td>
                         <?php } ?>
-                        <td class="text-capitalize"><?php echo $status; ?></td>
+
+                        <?php if($status == 'approved') { ?>
+                            <td class="text-success">Approved</td>
+                        <?php } else if($status == 'pending') { ?>
+                            <td class="text-primary">Pending</td>
+                        <?php } else { ?>
+                            <td class="text-danger">Declined</td>
+                        <?php }?>
                     </tr>
                 <?php } ?>
             </tbody>
