@@ -68,8 +68,12 @@ if (!isAdmin()) {
                         <td><?php echo $idno; ?></td>
                         <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
                         <td><?php echo $uname; ?></td>
-                        <td><?php echo $admin; ?></td>
-                        <td><?php echo $status; ?></td>
+                        <?php if($admin == 1) { ?>
+                            <td>Admin</td>
+                        <?php } else { ?>
+                            <td>Standard</td>
+                        <?php } ?>
+                        <td class="text-capitalize"><?php echo $status; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
