@@ -45,6 +45,12 @@ if (!isLoggedIn()) {
             color: #3b6e5e;
             text-decoration: underline;
         }
+        .align-middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
     </style>
 </head>
 <body>
@@ -92,10 +98,13 @@ if (!isLoggedIn()) {
                 <label for="notes" class="form-label">Notes</label>
                 <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
             </div>
-            <div class="text-center float-end d-flex align-middle">
-                <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="cancel-sense float-end">Cancel</a> &nbsp;&nbsp;
+            <div class="text-center float-end d-flex align-items-center">
+                <div class="align-middle"> <!-- Create a container div for vertical alignment -->
+                    <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="cancel-sense float-end">Cancel</a> &nbsp;&nbsp;
+                </div>
                 <button type="submit" class="btn btn-outline-primary add-sense btn-sm">Add New Sensor</button>
             </div>
+
 
         </form>
 
