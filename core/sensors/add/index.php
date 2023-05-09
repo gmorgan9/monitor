@@ -36,6 +36,9 @@ if (!isLoggedIn()) {
             background-color: #3b6e5e;
             border-color: #3b6e5e;
         }
+        .cancel-sense {
+            color: #3b6e5e;
+        }
     </style>
 </head>
 <body>
@@ -84,8 +87,8 @@ if (!isLoggedIn()) {
                 <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
             </div>
             <div class="text-center float-end">
-                <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="text-decoration-none text-primary float-end">Cancel</button> &nbsp;&nbsp;
-                <button type="submit" class="btn btn-outline-primary add-sense">Add New Sensor</button>
+                <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="text-decoration-none cancel-sense float-end">Cancel</button> &nbsp;&nbsp;
+                <button type="submit" class="btn btn-outline-primary add-sense btn-sm">Add New Sensor</button>
             </div>
         </form>
 
