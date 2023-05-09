@@ -6,7 +6,7 @@
 // require_once ROOT_PATH . "/app/database/connection.php";
 // require_once ROOT_PATH . "/app/database/functions.php";
 // include(ROOT_PATH . "path.php");
-require_once ROOT_PATH . '/path.php';
+require_once '../../../path.php';
 //require_once ROOT_PATH . "/execute.php";
 
 
