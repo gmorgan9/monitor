@@ -4,6 +4,10 @@ require_once "app/database/connection.php";
 require_once "path.php";
 require_once "execute.php";
 session_start();
+
+if(isLoggedIn() == false){
+    header('location: '. BASE_URL . '/core/entry/login.php');
+  }
 ?>
 <!DOCTYPE html>
 <html>
