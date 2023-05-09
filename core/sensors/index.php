@@ -66,6 +66,7 @@ if (!isLoggedIn()) {
                         <th>Status</th>
                         <th>Sensor Type</th>
                         <th>IP</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
