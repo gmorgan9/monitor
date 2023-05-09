@@ -5,9 +5,11 @@ require_once "app/database/functions.php";
 require_once "path.php";
 session_start();
 
-if (!isLoggedIn()) {
-    header('Location: ' . BASE_URL . '/core/entry/login.php');
-    exit;
+if ($_SERVER['HTTPS'] != 'on') {
+    // Redirect to HTTPS
+    $url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    header("Location: $url");
+    exit();
 }
 
 ?>
