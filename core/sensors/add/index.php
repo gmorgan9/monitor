@@ -34,7 +34,7 @@ session_start();
 </head>
 <body>
 
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    <?php //include(ROOT_PATH . "/app/includes/header.php"); ?>
     
     <!-- container -->
         <div class="container">
