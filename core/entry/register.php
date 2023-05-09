@@ -47,14 +47,6 @@ if (isLoggedIn()) {
                      </div>
                   <?php endif; ?>
                   <form action="" method="post">
-                  <div class="mb-3">
-                        <label for="firstname" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstname" name="firstname" required>
-                     </div>
-                     <div class="mb-3">
-                        <label for="lastname" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastname" name="lastname" required>
-                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" id="email" name="email" required>
@@ -66,6 +58,10 @@ if (isLoggedIn()) {
                      <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
+                     </div>
+                    <div class="mb-3">
+                        <label for="cpassword" class="form-label">Confirm Password</label>
+                        <input type="cpassword" class="form-control" id="cpassword" name="cpassword" required>
                      </div>
                      <button name="register-btn" type="submit" class="btn btn-primary">Register</button>
                   </form>
