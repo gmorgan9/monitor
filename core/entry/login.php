@@ -55,7 +55,7 @@ if (isLoggedIn()) {
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                      </div>
-                     <button type="submit" class="btn btn-primary">Login</button>
+                     <button name="login-btn" type="submit" class="btn btn-primary">Login</button>
                   </form>
                   <p class="mt-3">Don't have an account? <a href="/pages/entry/register.php">Register now</a></p>
                </div>
