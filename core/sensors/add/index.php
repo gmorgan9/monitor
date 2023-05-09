@@ -38,6 +38,7 @@ if (!isLoggedIn()) {
         }
         .cancel-sense {
             color: #3b6e5e;
+            font-size: 14px;
         }
         .cancel-sense:hover {
             color: #3b6e5e;
