@@ -35,28 +35,23 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-target="#myModal">
-                Open Modal
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
             </button>
 
-            <!-- MODAL -->
-                <div class="modal" id="myModal">
+            <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                        <!-- Modal header -->
                         <div class="modal-header">
-                            <h5 class="modal-title">Modal Title</h5>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        
-                        <!-- Modal body -->
                         <div class="modal-body">
-                            <p>Modal content goes here...</p>
+                            ...
                         </div>
-                        
-                        <!-- Modal footer -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                         </div>
