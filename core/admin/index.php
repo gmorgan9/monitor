@@ -62,16 +62,27 @@ if (!isAdmin()) {
                     ?>
 
                     <tr>
+                        <!-- IDNO -->
                         <td><?php echo $idno; ?></td>
-                        <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
+
+                        <!-- NAME -->
+                        <?php if (isset($fname)) { ?>
+                            <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
+                        <?php } else { ?>
+                            <td class="text-warning">Not Set</td>
+                        <?php } ?>
+
+                        <!-- USERNAME -->
                         <td><?php echo $uname; ?></td>
 
+                        <!-- ACCOUNT -->
                         <?php if ($admin == 1) { ?>
                             <td>Admin</td>
                         <?php } else { ?>
                             <td>Standard</td>
                         <?php } ?>
 
+                        <!-- STATUS -->
                         <?php if ($status == 'approved') { ?>
                             <td class="text-success">Approved</td>
                         <?php } else if ($status == 'pending') { ?>
