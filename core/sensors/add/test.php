@@ -34,7 +34,7 @@ if (!isLoggedIn()) {
 
     <div class="container">
 
-        <form action="" method="post" class="w-75 mx-auto">
+        <form action="" method="post" class="w-75 d-flex justify-content-center">
 
             <div class="row">
                 <div class="col-md-6">
