@@ -5,7 +5,7 @@
 // require_once "../../../path.php";
 // require_once ROOT_PATH . "/app/database/connection.php";
 // require_once ROOT_PATH . "/app/database/functions.php";
-//require_once ROOT_PATH . "/path.php";
+include(ROOT_PATH . "/path.php");
 //require_once ROOT_PATH . "/execute.php";
 
 
@@ -34,7 +34,7 @@ session_start();
 </head>
 <body>
 
-    <?php //include(ROOT_PATH . "/app/includes/header.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     
     <!-- container -->
         <div class="container">
