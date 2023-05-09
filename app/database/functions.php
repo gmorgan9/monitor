@@ -8,6 +8,10 @@ function isLoggedIn() {
     return isset($_SESSION['fname']);
 }
 
+function isAdmin() {
+    return isset($_SESSION['admin']) && $_SESSION['admin'] == 1;
+}
+
 
 // LOGIN
     if(isset($_POST['login-btn'])){
@@ -31,12 +35,13 @@ function isLoggedIn() {
     		$_SESSION['fname']           = $row['firstname'];
     		$_SESSION['uid']             = $row['user_id'];
     		$_SESSION['loggedin']        = $row['loggedin'];
-    		$_SESSION['employee_idno']   = $row['idno'];
+    		$_SESSION['idno']            = $row['idno'];
     		$_SESSION['lname']           = $row['lastname'];
     		$_SESSION['uname']           = $row['username'];
-    	   $_SESSION['email']            = $row['email'];
-    	   $_SESSION['pass']             = $row['password'];
-    	   header('location:' . BASE_URL . '/core/alerts/');
+    	    $_SESSION['email']           = $row['email'];
+    	    $_SESSION['pass']            = $row['password'];
+            $_SESSION['admin']           = $row['isadmin'];
+    	    header('location:' . BASE_URL . '/core/alerts/');
         
     	}else{
     	   $error[] = 'Possible Incorrect email or password! Account could not be approved yet!';
