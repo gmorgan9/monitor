@@ -34,6 +34,38 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                Open Modal
+            </button>
+
+            <!-- MODAL -->
+                <div class="modal" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <!-- Modal header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal Title</h5>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <p>Modal content goes here...</p>
+                        </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- END MODAL -->
+
+
+
+
             <?php
             $recordsPerPage = 10;
             $curPage = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -109,22 +141,6 @@ if (!isLoggedIn()) {
                             <td><?php echo $sensor_type; ?></td>
                             <!-- Name -->
                             <td><?php echo $ip; ?></td>
-
-                            <!-- ACCOUNT -->
-                            <!-- <?php //if ($admin == 1) { ?>
-                                <td>Admin</td>
-                            <?php //} else { ?>
-                                <td>Standard</td>
-                            <?php //} ?> -->
-
-                            <!-- STATUS -->
-                            <!-- <?php //if ($status == 'approved') { ?>
-                                <td class="text-success">Approved</td>
-                            <?php //} else if ($status == 'pending') { ?>
-                                <td class="text-primary">Pending</td>
-                            <?php //} else { ?>
-                                <td class="text-danger">Declined</td>
-                            <?php //} ?> -->
 
                             <!-- ACTIONS -->
                             <td>
