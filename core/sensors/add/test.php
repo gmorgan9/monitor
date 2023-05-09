@@ -73,8 +73,9 @@ if (!isLoggedIn()) {
                 <label for="notes" class="form-label">Notes</label>
                 <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
             </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-outline-primary float-end">Submit</button>
+            <div class="text-center float-end">
+                <a type="submit" class="float-end">Cancel</button> &nbsp;&nbsp;
+                <button type="submit" class="btn btn-outline-primary">Add New Sensor</button>
             </div>
         </form>
 
