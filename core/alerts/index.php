@@ -65,6 +65,7 @@ if (!isLoggedIn()) {
                         <th>Timestamp</th>
                         <th>Summary</th>
                         <th>Class</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,22 +103,6 @@ if (!isLoggedIn()) {
 
                             <!-- SUMMARY -->
                             <td>Alert: <?php echo $msg; ?></td>
-
-                            <!-- ACCOUNT -->
-                            <?php if ($admin == 1) { ?>
-                                <td>Admin</td>
-                            <?php } else { ?>
-                                <td>Standard</td>
-                            <?php } ?>
-
-                            <!-- STATUS -->
-                            <?php if ($status == 'approved') { ?>
-                                <td class="text-success">Approved</td>
-                            <?php } else if ($status == 'pending') { ?>
-                                <td class="text-primary">Pending</td>
-                            <?php } else { ?>
-                                <td class="text-danger">Declined</td>
-                            <?php } ?>
 
                             <!-- ACTIONS -->
                             <td>
