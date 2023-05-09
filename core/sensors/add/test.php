@@ -59,8 +59,8 @@ if (!isLoggedIn()) {
                     <input type="text" class="form-control" id="ip_addr" placeholder="Enter IP address">
                 </div>
                 <div class="mb-3">
-                    <label for="sensor_type" class="form-label">Sensor Type</label>
-                    <select class="form-control" id="sensor_type">
+                    <label for="sensor_type" class="">Sensor Type</label>
+                    <select class="" id="sensor_type">
                         <option value="" disabled selected style="color: #6c757d;">Select Sensor Type</option>
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
