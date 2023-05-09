@@ -4,7 +4,7 @@ session_start();
 require_once '../../../app/database/connection.php';
 // require_once "../../../app/database/functions.php";
 // require_once '../../../app/database/functions.php';
-include(ROOT_PATH . "/path.php");
+include(ROOT_PATH . '/path.php');
 // require_once '../../../path.php';
 
 
