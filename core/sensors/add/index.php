@@ -34,7 +34,7 @@ if (!isLoggedIn()) {
 </head>
 <body>
 
-    <?php include(BASE_URL . "/app/includes/header.php"); ?>
+    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
     
     <!-- container -->
         <div class="container">
