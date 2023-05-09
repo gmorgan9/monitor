@@ -7,7 +7,7 @@ session_start();
 date_default_timezone_set('UTC');
 
 
-function generateRandomNumber($length = 10) {
+function generateRandomNumber($conn, $length = 10) {
     $characters = '0123456789';
     $max = strlen($characters) - 1;
 
@@ -54,7 +54,11 @@ foreach ($jsonLines as $index => $line) {
     $message = mysqli_real_escape_string($conn, $line);
 
     // Generate a random identifier
-    $idno = generateRandomNumber();
+    $idno = generateRandomNumber($conn);
+    $dst_addr = mysqli_real_escape_string($conn, $data["dst_addr"]);
+    $dst_port = mysqli_real_escape_string($conn, $data["dst_port"]);
+    $src_addr = mysqli_real_escape_string($conn, $data["src_addr"]);
+    $src_port = mysqli_real_escape_string($conn, $data["src_port"]);
     $seconds = mysqli_real_escape_string($conn, $data["seconds"]);
     $msg = mysqli_real_escape_string($conn, $data["msg"]);
     $class = mysqli_real_escape_string($conn, $data["class"]);
@@ -92,7 +96,7 @@ foreach ($jsonLines as $index => $line) {
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
-    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp, message) VALUES ('$idno', '$seconds', '$msg', '$class', '$formattedTimestamp', '$message')";
+    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp, message, dst_addr, dst_port, src_addr, src_port) VALUES ('$idno', '$seconds', '$msg', '$class', '$formattedTimestamp', '$message', '$dst_addr', '$dst_port', '$src_addr', '$src_port')";
     mysqli_query($conn, $sql);
     // Execute the SQL statement
     // if (mysqli_query($conn, $sql)) {
