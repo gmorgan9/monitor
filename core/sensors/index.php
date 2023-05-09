@@ -35,9 +35,10 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
-            <button type="button" style="background-color: #3b6e5e; border-color: #3b6e5e;" class="btn btn-primary btn-sm float-end mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <a href="your-link-url" class="btn btn-primary btn-sm float-end mt-2 mb-2" style="background-color: #3b6e5e; border-color: #3b6e5e;">
                 Add New Sensor
-            </button>
+            </a>
+
 
             <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
