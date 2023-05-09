@@ -19,7 +19,7 @@ function isLoggedIn() {
     	$isadmin = $_POST['isadmin'];
     	$loggedin = $_POST['loggedin'];
     
-    	$select = " SELECT * FROM users WHERE username = '$uname' && password = '$pass' ";
+    	$select = " SELECT * FROM users WHERE username = '$uname' && password = '$pass' && status = 'approved' ";
     
     	$result = mysqli_query($conn, $select);
     
