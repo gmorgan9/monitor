@@ -6,10 +6,10 @@ require_once "../../path.php";
 
 session_start();
 
-// if (isLoggedIn()) {
-//     header('Location: ' . BASE_URL . '/core/alerts/');
-//     exit;
-// }
+if (isLoggedIn()) {
+    header('Location: ' . BASE_URL . '/core/alerts/');
+    exit;
+}
 
 
 

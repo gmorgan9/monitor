@@ -1,5 +1,6 @@
 <?php
 
+require_once "../../path.php";
 session_start();
 require('connection.php');
 
