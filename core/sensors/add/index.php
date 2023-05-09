@@ -42,7 +42,7 @@ if (!isLoggedIn()) {
         }
         .cancel-sense:hover {
             color: #3b6e5e;
-            text-decoration: underline;
+            text-transform: underline;
         }
     </style>
 </head>
