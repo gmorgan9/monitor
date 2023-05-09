@@ -117,7 +117,7 @@ function isAdmin() {
         if($pass != $cpass){
             $error[] = 'passwords do not match!';
         }else{
-            $insert = "INSERT INTO users (idno, deployment_id, name, ip_addr, sensor_type, notes) VALUES('$idno', '$deployment_id', '$name', '$ip_addr', '$sensor_type', '$notes')";
+            $insert = "INSERT INTO sensors (idno, deployment_id, name, ip_addr, sensor_type, notes) VALUES('$idno', '$deployment_id', '$name', '$ip_addr', '$sensor_type', '$notes')";
             mysqli_query($conn, $insert);
             // header('location:' . BASE_URL . '/core/entry/login.php');
         }
