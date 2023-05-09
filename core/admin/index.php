@@ -66,7 +66,7 @@ if (!isAdmin()) {
                         <td><?php echo $idno; ?></td>
 
                         <!-- NAME -->
-                        <?php if (isset($fname)) { ?>
+                        <?php if ($fname !== null) { ?>
                             <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
                         <?php } else { ?>
                             <td class="text-warning">Not Set</td>
