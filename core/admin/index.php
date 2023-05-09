@@ -15,15 +15,6 @@ if (!isAdmin()) {
     exit;
 }
 
-// Retrieve users from the database
-$sql = "SELECT * FROM users";
-$result = mysqli_query($conn, $sql);
-
-// Check if the query was successful
-if (!$result) {
-    die("Database query failed: " . mysqli_error($conn));
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -54,11 +45,23 @@ if (!$result) {
                 </tr>
             </thead>
             <tbody>
-                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+
+            <?php
+                $sql = "SELECT * FROM employee";
+                $all = mysqli_query($conn, $sql);
+                if($all) {
+                    while ($row = mysqli_fetch_assoc($all)) {
+                        $user_id     = $row['user_id'];
+                        $firstname   = $row['firstname'];
+                        $lname       = $row['lastname'];
+                    }
+            ?>
+                
+
                     <tr>
-                        <td><?php echo $row['user_id']; ?></td>
-                        <td><?php echo $row['name']; ?></td>
-                        <td><?php echo $row['email']; ?></td>
+                        <td><?php echo $user_id; ?></td>
+                        <td><?php echo $fname; ?></td>
+                        <td><?php echo $lname; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
