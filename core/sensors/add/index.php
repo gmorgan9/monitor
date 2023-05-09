@@ -30,7 +30,7 @@ if (!isLoggedIn()) {
 </head>
 <body>
 
-    <?php include("../../app/includes/header.php"); ?>
+    <?php include("../../../app/includes/header.php"); ?>
 
     <div class="container">
 
