@@ -41,7 +41,8 @@ foreach ($jsonLines as $index => $line) {
     }
 
     // Grab the JSON message and store it in the message field
-    $message = mysqli_real_escape_string($conn, $data["message"]);
+    // $message = mysqli_real_escape_string($conn, $data["message"]);
+    $message = $data;
 
     // Generate a random identifier
     $idno = generateRandomNumber();
@@ -80,7 +81,7 @@ foreach ($jsonLines as $index => $line) {
     // Extract other required fields as needed
 
     // Prepare the SQL insert statement
-    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp) VALUES ('$idno', '$seconds', '$msg', '$class', '$formattedTimestamp')";
+    $sql = "INSERT INTO alerts (idno, seconds, msg, class, timestamp, message) VALUES ('$idno', '$seconds', '$msg', '$class', '$formattedTimestamp', '$message')";
     mysqli_query($conn, $sql);
     // Execute the SQL statement
     // if (mysqli_query($conn, $sql)) {
