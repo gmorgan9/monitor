@@ -1,6 +1,5 @@
 <?php
 session_start();
-require_once "../../path.php";
 // include("/path.php");
 require('connection.php');
 
@@ -119,7 +118,7 @@ function isAdmin() {
         }else{
             $insert = "INSERT INTO sensors (idno, deployment_id, name, ip_addr, sensor_type, notes) VALUES('$idno', '$deployment_id', '$name', '$ip_addr', '$sensor_type', '$notes')";
             mysqli_query($conn, $insert);
-            header('location:' . BASE_URL . '/core/sensors/');
+            header('location: /core/sensors/');
         }
         }
 
