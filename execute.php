@@ -7,17 +7,27 @@ session_start();
 date_default_timezone_set('UTC');
 
 
-function generateRandomNumber($length = 8) {
+function generateRandomNumber($length = 10) {
     $characters = '0123456789';
-    $randomString = '';
     $max = strlen($characters) - 1;
 
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[mt_rand(0, $max)];
-    }
+    do {
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[mt_rand(0, $max)];
+        }
+
+        // Check if the generated number already exists in the database
+        $checkQuery = "SELECT COUNT(*) as count FROM alerts WHERE idno = '$randomString'";
+        $checkResult = mysqli_query($conn, $checkQuery);
+        $row = mysqli_fetch_assoc($checkResult);
+        $count = $row['count'];
+
+    } while ($count > 0); // Repeat until a unique number is generated
 
     return $randomString;
 }
+
 
 $jsonFile = '/var/log/snort/alert_json.txt';
 
@@ -50,21 +60,23 @@ foreach ($jsonLines as $index => $line) {
     $class = mysqli_real_escape_string($conn, $data["class"]);
     $timestamp = mysqli_real_escape_string($conn, $data["timestamp"]);
 
-    $dateTimeParts = explode('-', $timestamp);
-    $datePart = $dateTimeParts[0];
-    $timePart = $dateTimeParts[1];
+    // FORMATTED TIMESTAMP
+        $dateTimeParts = explode('-', $timestamp);
+        $datePart = $dateTimeParts[0];
+        $timePart = $dateTimeParts[1];
 
-    $dateParts = explode('/', $datePart);
-    $month = $dateParts[0];
-    $day = $dateParts[1];
+        $dateParts = explode('/', $datePart);
+        $month = $dateParts[0];
+        $day = $dateParts[1];
 
-    $timeParts = explode(':', $timePart);
-    $hour = $timeParts[0];
-    $minute = $timeParts[1];
-    $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
+        $timeParts = explode(':', $timePart);
+        $hour = $timeParts[0];
+        $minute = $timeParts[1];
+        $second = substr($timeParts[2], 0, 2); // Truncate milliseconds
 
-    $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
-    $formattedTimestamp = $dateTime->format('Y-m-d\TH:i:s');
+        $dateTime = DateTime::createFromFormat('m/d H:i:s', $month . '/' . $day . ' ' . $hour . ':' . $minute . ':' . $second);
+        $formattedTimestamp = $dateTime->format('Y-m-d\TH:i:s');
+    // END FORMATTED TIMESTAMP
 
     // Check if the record already exists with the same idno
     $checkQuery = "SELECT * FROM alerts WHERE seconds = '$seconds'";
