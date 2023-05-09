@@ -35,7 +35,7 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
 
