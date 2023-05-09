@@ -3,9 +3,9 @@ session_start();
 
 require_once '../../../app/database/connection.php';
 // require_once "../../../app/database/functions.php";
-// require_once '../../../app/database/functions.php';
-include(ROOT_PATH . '/path.php');
-// require_once '../../../path.php';
+require_once '../../../app/database/functions.php';
+// include(ROOT_PATH . '/path.php');
+require_once '../../../path.php';
 
 
 // if (!isLoggedIn()) {
@@ -40,7 +40,7 @@ include(ROOT_PATH . '/path.php');
                 Add New Sensor
             </h1>
 
-            <form>
+            <!-- <form>
                 <div class="mb-3">
                 <label for="deployment_id" class="form-label">Deployment ID</label>
                 <input type="text" class="form-control" id="deployment_id" placeholder="Enter deployment ID">
@@ -65,7 +65,7 @@ include(ROOT_PATH . '/path.php');
                 <label for="notes" class="form-label">Notes</label>
                 <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
                 </div>
-            </form>
+            </form> -->
 
         </div>
     <!-- end container -->
