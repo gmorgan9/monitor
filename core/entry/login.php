@@ -33,11 +33,9 @@ if(isset($_POST['login-btn'])){
 		$_SESSION['loggedin']        = $row['loggedin'];
 		$_SESSION['employee_idno']   = $row['idno'];
 		$_SESSION['lname']           = $row['lastname'];
-		// $_SESSION['acc_type']        = $row['acc_type'];
 		$_SESSION['uname']           = $row['username'];
 	   $_SESSION['email']            = $row['email'];
 	   $_SESSION['pass']             = $row['password'];
-	//    $_SESSION['cpass']            = $row['cpassword'];
 	   header('location:' . BASE_URL . '/core/alerts.php');
 	  
 	}else{
