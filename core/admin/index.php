@@ -44,6 +44,7 @@ if (!isAdmin()) {
                 <th>Username</th>
                 <th>Account</th>
                 <th>Status</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -90,6 +91,17 @@ if (!isAdmin()) {
                         <?php } else { ?>
                             <td class="text-danger">Declined</td>
                         <?php } ?>
+
+                        <!-- ACTIONS -->
+                        <td>
+                            <a href="#" class="btn btn-primary btn-sm">
+                                <i class="bi bi-pencil"></i> Edit
+                            </a>
+                            <a href="#" class="btn btn-danger btn-sm">
+                                <i class="bi bi-trash"></i> Delete
+                            </a>
+                        </td>
+
                     </tr>
 
             <?php
