@@ -25,7 +25,7 @@ if (!isLoggedIn()) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <title>LogDetect | Alerts</title>
+    <title>Sensors | LogDetect</title>
 </head>
 <body>
 
@@ -38,7 +38,7 @@ if (!isLoggedIn()) {
             $recordsPerPage = 10;
             $curPage = isset($_GET['page']) ? $_GET['page'] : 1;
             // Calculate the total number of pages
-            $query = "SELECT COUNT(*) AS total FROM alerts";
+            $query = "SELECT COUNT(*) AS total FROM sensors";
             $result = mysqli_query($conn, $query);
             $row = mysqli_fetch_assoc($result);
             $total = $row['total'];
@@ -61,10 +61,11 @@ if (!isLoggedIn()) {
             <table class="table table-bordered mt-2">
                 <thead>
                     <tr>
-                        <th>Alert ID</th>
-                        <th>Timestamp</th>
-                        <th>Summary</th>
-                        <th>Class</th>
+                        <th>Deployment ID</th>
+                        <th>Name</th>
+                        <th>Status</th>
+                        <th>Sensor Type</th>
+                        <th>IP</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -78,7 +79,7 @@ if (!isLoggedIn()) {
                     $startFrom = ($currentPage - 1) * $recordsPerPage;
 
                     // Select the data from the table with pagination
-                    $query = "SELECT * FROM alerts LIMIT $startFrom, $recordsPerPage";
+                    $query = "SELECT * FROM sensors LIMIT $startFrom, $recordsPerPage";
                     $result = mysqli_query($conn, $query);
 
                     // Check if there are any results
@@ -86,38 +87,43 @@ if (!isLoggedIn()) {
                         // Loop through each row of data
                         while ($a = mysqli_fetch_assoc($result)) {
                             $idno = $a['idno'];
-                            $seconds = $a['seconds'];
-                            $action = $a['action'];
-                            $msg = $a['msg'];
-                            $class = $a['class'];
-                            $timestamp = $a['timestamp'];
+                            $did = $a['deployment_id'];
+                            $name = $a['name'];
+                            $status = $a['status'];
+                            $sensor_type = $a['sensor_type'];
+                            $ip = $a['ip_addr'];
                     ?>
 
                         <tr>
                             <!-- IDNO -->
-                            <td>#<?php echo $idno; ?></td>
+                            <td>#<?php echo $did; ?></td>
 
                             <!-- TIMESTAMP -->
-                            <td><?php echo $timestamp; ?></td>
+                            <td><?php echo $name; ?></td>
 
-                            <!-- SUMMARY -->
-                            <td>Alert: <?php echo $msg; ?></td>
+                            <!-- Name -->
+                            <td><?php echo $status; ?></td>
+
+                            <!-- Name -->
+                            <td><?php echo $sensor_type; ?></td>
+                            <!-- Name -->
+                            <td><?php echo $ip; ?></td>
 
                             <!-- ACCOUNT -->
-                            <?php if ($admin == 1) { ?>
+                            <!-- <?php //if ($admin == 1) { ?>
                                 <td>Admin</td>
-                            <?php } else { ?>
+                            <?php //} else { ?>
                                 <td>Standard</td>
-                            <?php } ?>
+                            <?php //} ?> -->
 
                             <!-- STATUS -->
-                            <?php if ($status == 'approved') { ?>
+                            <!-- <?php //if ($status == 'approved') { ?>
                                 <td class="text-success">Approved</td>
-                            <?php } else if ($status == 'pending') { ?>
+                            <?php //} else if ($status == 'pending') { ?>
                                 <td class="text-primary">Pending</td>
-                            <?php } else { ?>
+                            <?php //} else { ?>
                                 <td class="text-danger">Declined</td>
-                            <?php } ?>
+                            <?php //} ?> -->
 
                             <!-- ACTIONS -->
                             <td>
