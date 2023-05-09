@@ -59,7 +59,7 @@ function isLoggedIn() {
         $cpass = md5($_POST['cpassword']);
         // $acc_type = $_POST['acc_type'];
     
-        $select = " SELECT * FROM users WHERE uname = '$uname' && email = '$email' && password = '$pass' ";
+        $select = " SELECT * FROM users WHERE username = '$uname' && email = '$email' && password = '$pass' ";
     
         $result = mysqli_query($conn, $select);
     
