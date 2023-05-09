@@ -35,8 +35,8 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
-            <button type="button" style="background-color: pink; border-color: pink;" class="btn btn-primary float-end mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
+            <button type="button" style="background-color: #3b6e5e; border-color: #3b6e5e;" class="btn btn-primary float-end mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Add New Sensor
             </button>
 
             <!-- Modal -->
