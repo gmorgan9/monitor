@@ -102,7 +102,7 @@ if (!isLoggedIn()) {
                 <div class="align-middle"> <!-- Create a container div for vertical alignment -->
                     <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="cancel-sense float-end">Cancel</a> &nbsp;&nbsp;
                 </div>
-                <button type="submit" class="btn btn-outline-primary add-sense btn-sm">Add New Sensor</button>
+                <button type="submit" name="add-sensor" class="btn btn-outline-primary add-sense btn-sm">Add New Sensor</button>
             </div>
 
 

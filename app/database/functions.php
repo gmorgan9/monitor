@@ -90,3 +90,38 @@ function isAdmin() {
     
     };
 // end REGISTER
+
+// ADD NEW SENSOR
+    if(isset($_POST['add-sensor'])){
+
+        // `deployment_id`, `name`, `ip_addr`, `sensor_type`, `notes`
+        $idno = str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
+        // $idno  = rand(10000, 99999); // figure how to not allow duplicates
+        $deployment_id = mysqli_real_escape_string($conn, $_POST['deployment_id']);
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $ip_addr = mysqli_real_escape_string($conn, $_POST['ip_addr']);
+        $sensor_type = mysqli_real_escape_string($conn, $_POST['sensor_type']);
+        $notes = mysqli_real_escape_string($conn, $_POST['notes']);
+        // $acc_type = $_POST['acc_type'];
+
+        $select = " SELECT * FROM sensors WHERE idno = '$idno' ";
+
+        $result = mysqli_query($conn, $select);
+
+        if(mysqli_num_rows($result) > 0){
+
+        $error[] = 'user already exist!';
+
+        }else{
+
+        if($pass != $cpass){
+            $error[] = 'passwords do not match!';
+        }else{
+            $insert = "INSERT INTO users (idno, deployment_id, name, ip_addr, sensor_type, notes) VALUES('$idno', '$deployment_id', '$name', '$ip_addr', '$sensor_type', '$notes')";
+            mysqli_query($conn, $insert);
+            // header('location:' . BASE_URL . '/core/entry/login.php');
+        }
+        }
+
+    };
+// end REGISTER
