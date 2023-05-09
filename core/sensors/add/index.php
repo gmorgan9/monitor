@@ -27,6 +27,15 @@ if (!isLoggedIn()) {
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <title>Sensors | LogDetect</title>
+    <style>
+        .add-sensor {
+            border-color: #3b6e5e;
+        }
+        .add-sensor:hover {
+            background-color: #3b6e5e;
+            border-color: #3b6e5e;
+        }
+    </style>
 </head>
 <body>
 
@@ -75,7 +84,7 @@ if (!isLoggedIn()) {
             </div>
             <div class="text-center float-end">
                 <a href="<?php echo BASE_URL . '/core/sensors/'; ?>" class="text-decoration-none text-primary float-end">Cancel</button> &nbsp;&nbsp;
-                <button type="submit" class="btn btn-outline-primary">Add New Sensor</button>
+                <button type="submit" class="btn btn-outline-primary add-sense">Add New Sensor</button>
             </div>
         </form>
 
