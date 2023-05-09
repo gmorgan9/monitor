@@ -46,7 +46,7 @@ function isAdmin() {
                 $_SESSION['pass'] = $row['password'];
                 $_SESSION['admin'] = $row['isadmin'];
 
-                header('Location: ' . BASE_URL . '/core/alerts/');
+                header('Location: /core/alerts/');
                 exit;
             }
         } else {
