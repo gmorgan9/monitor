@@ -28,10 +28,11 @@ if (!isLoggedIn()) {
 
     <title>Sensors | LogDetect</title>
     <style>
-        .add-sensor {
+        .add-sense {
+            color: #3b6e5e;
             border-color: #3b6e5e;
         }
-        .add-sensor:hover {
+        .add-sense:hover {
             background-color: #3b6e5e;
             border-color: #3b6e5e;
         }
