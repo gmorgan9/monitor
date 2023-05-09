@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../../../app/database/connection.php";
-require_once __DIR__ . "/../../../app/database/func.php";
+// require_once __DIR__ . "/../../../app/database/func.php";
 require_once __DIR__ . "/../../../path.php";
 require_once __DIR__ . "/../../../execute.php";
 
