@@ -39,6 +39,10 @@ if (!isLoggedIn()) {
         .cancel-sense {
             color: #3b6e5e;
         }
+        .cancel-sense:hover {
+            color: #3b6e5e;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
