@@ -41,7 +41,9 @@ if (!isAdmin()) {
                 <tr>
                     <th>User ID</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Account</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,17 +53,23 @@ if (!isAdmin()) {
                 $all = mysqli_query($conn, $sql);
                 if($all) {
                     while ($row = mysqli_fetch_assoc($all)) {
-                        $user_id     = $row['user_id'];
-                        $firstname   = $row['firstname'];
+                        $idno     = $row['idno'];
+                        $email       = $row['email'];
+                        $uname       = $row['username'];
+                        $fname       = $row['firstname'];
                         $lname       = $row['lastname'];
+                        $admin       = $row['isadmin'];
+                        $status      = $row['status'];
                     }
             ?>
                 
 
                     <tr>
-                        <td><?php echo $user_id; ?></td>
-                        <td><?php echo $fname; ?></td>
-                        <td><?php echo $lname; ?></td>
+                        <td><?php echo $idno; ?></td>
+                        <td><?php echo $lname; ?>, <?php echo $fname; ?></td>
+                        <td><?php echo $uname; ?></td>
+                        <td><?php echo $admin; ?></td>
+                        <td><?php echo $status; ?></td>
                     </tr>
                 <?php } ?>
             </tbody>
