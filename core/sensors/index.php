@@ -80,7 +80,11 @@ if (!isLoggedIn()) {
                 </a>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <p class="text-secondary" style="font-size: 14px;">
-                    <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
+                    <?php if($totalPages == 0) { ?>
+                        <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of 1)
+                    <?php } else { ?>
+                        <?php echo $total; ?> alerts (Page <?php echo $curPage; ?> of <?php echo $totalPages; ?>)
+                    <?php } ?>
                 </p>
             </div>
 
