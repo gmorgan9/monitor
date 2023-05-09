@@ -104,6 +104,9 @@ if (!isLoggedIn()) {
                             <!-- SUMMARY -->
                             <td>Alert: <?php echo $msg; ?></td>
 
+                            <!-- CLASS -->
+                            <td><?php echo $class; ?></td>
+
                             <!-- ACTIONS -->
                             <td>
                                 <a href="#" class="text-decoration-none text-primary">
