@@ -32,11 +32,28 @@ if (!isAdmin()) {
 <body>
 <?php include("../../app/includes/header.php"); ?>
 
-    <div class="container text-start">
-
+<div class="container">
         <h1>Welcome to the Admin Page</h1>
         <p>This is the protected area for admin users only.</p>
 
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($result)) { ?>
+                    <tr>
+                        <td><?php echo $row['user_id']; ?></td>
+                        <td><?php echo $row['name']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
