@@ -1,9 +1,13 @@
 <?php
 
-require_once "../../../app/database/connection.php";
-require_once "../../../app/database/functions.php";
-require_once "../../../path.php";
-require_once "../../../execute.php";
+// require_once "../../../app/database/connection.php";
+// require_once "../../../app/database/functions.php";
+// require_once "../../../path.php";
+require_once ROOT_PATH . "/app/database/connection.php";
+require_once ROOT_PATH . "app/database/functions.php";
+require_once ROOT_PATH . "/path.php";
+require_once ROOT_PATH . "/execute.php";
+
 
 session_start();
 
@@ -30,7 +34,7 @@ if (!isLoggedIn()) {
 </head>
 <body>
 
-    <?php include("../../../app/includes/header.php"); ?>
+    <?php include(BASE_URL . "/app/includes/header.php"); ?>
     
     <!-- container -->
         <div class="container">
