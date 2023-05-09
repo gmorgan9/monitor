@@ -11,8 +11,6 @@ if (isLoggedIn()) {
     exit;
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,25 +33,36 @@ if (isLoggedIn()) {
 
 <?php include("../../app/includes/header.php"); ?>
    
-<br><br><br>
-<div class="form-container mx-auto">
-
-   <form action="" method="post">
-      <h3>login now</h3>
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
-      <input type="text" name="uname" required placeholder="enter your user name">
-      <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="login-btn" value="Login" class="form-btn">
-      <p>don't have an account? <a href="/pages/entry/register.php">register now</a></p>
-   </form>
-
-</div>
+<div class="container mt-5">
+      <div class="row justify-content-center">
+         <div class="col-md-6">
+            <div class="card">
+               <div class="card-body">
+                  <h3 class="card-title">Login</h3>
+                  <?php if (!empty($error)): ?>
+                     <div class="alert alert-danger">
+                        <?php foreach ($error as $errorMsg): ?>
+                           <p><?php echo $errorMsg; ?></p>
+                        <?php endforeach; ?>
+                     </div>
+                  <?php endif; ?>
+                  <form action="" method="post">
+                     <div class="mb-3">
+                        <label for="uname" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="uname" name="uname" required>
+                     </div>
+                     <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                     </div>
+                     <button type="submit" class="btn btn-primary">Login</button>
+                  </form>
+                  <p class="mt-3">Don't have an account? <a href="/pages/entry/register.php">Register now</a></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
 <?php //include("../../app/includes/footer.php"); ?>
 
