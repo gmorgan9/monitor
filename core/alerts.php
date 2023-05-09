@@ -129,7 +129,7 @@ if(isLoggedIn() == false){
                     <?php
                     // Display pagination links
                     for ($i = 1; $i <= $totalPages; $i++) {
-                        // echo "<li class='page-item " . ($i == $currentPage ? 'active' : '') . "'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
+                        echo "<li class='page-item " . ($i == $currentPage ? 'active' : '') . "'><a class='page-link' href='?page=" . $i . "'>" . $i . "</a></li>";
                     }
                     ?>
                 </ul>
