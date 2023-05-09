@@ -1,4 +1,4 @@
 <?php
 session_start();
-include("/path.php")
+include("/path.php");
 require('connection.php');
