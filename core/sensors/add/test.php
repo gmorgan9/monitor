@@ -1,16 +1,16 @@
 <?php
 
-require_once __DIR__ . "/../../../app/database/connection.php";
-require_once __DIR__ . "/../../../app/database/func.php";
-require_once __DIR__ . "/../../../path.php";
-require_once __DIR__ . "/../../../execute.php";
+require_once "/../../../app/database/connection.php";
+require_once "/../../../app/database/functions.php";
+require_once "/../../../path.php";
+require_once "/../../../execute.php";
 
 session_start();
 
-// if (!isLoggedIn()) {
-//     header('Location: ' . BASE_URL . '/core/entry/login.php');
-//     exit;
-// }
+if (!isLoggedIn()) {
+    header('Location: ' . BASE_URL . '/core/entry/login.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
