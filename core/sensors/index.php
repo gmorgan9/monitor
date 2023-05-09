@@ -35,7 +35,7 @@ if (!isLoggedIn()) {
     <!-- container -->
         <div class="container">
 
-            <a href="your-link-url" class="btn btn-primary btn-sm float-end mt-2 mb-2" style="background-color: #3b6e5e; border-color: #3b6e5e;">
+            <a href="<?php echo BASE_URL . '/core/sensors/add' ?>" class="btn btn-primary btn-sm float-end mt-2 mb-2" style="background-color: #3b6e5e; border-color: #3b6e5e;">
                 Add New Sensor
             </a>
 
