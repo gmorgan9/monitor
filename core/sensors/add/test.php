@@ -60,8 +60,8 @@ if (!isLoggedIn()) {
                 </div>
                 <div class="mb-3">
                     <label for="sensor_type" class="form-label">Sensor Type</label>
-                    <option value="">test</option>
                     <select class="form-control" id="sensor_type">
+                        <option value="">Select Sensor Type</option>
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
