@@ -95,10 +95,10 @@ if (!isAdmin()) {
                         <!-- ACTIONS -->
                         <td>
                             <a href="#" class="text-decoration-none text-primary">
-                                <i class="bi bi-pencil-square fw-bold"></i>
+                                <i class="bi bi-pencil-square"></i>
                             </a>
                             <a href="#" class="text-decoration-none text-danger">
-                                <i class="bi bi-trash fw-bold"></i>
+                                <i class="bi bi-trash"></i>
                             </a>
                         </td>
 
