@@ -119,7 +119,7 @@ function isAdmin() {
         }else{
             $insert = "INSERT INTO sensors (idno, deployment_id, name, ip_addr, sensor_type, notes) VALUES('$idno', '$deployment_id', '$name', '$ip_addr', '$sensor_type', '$notes')";
             mysqli_query($conn, $insert);
-            // header('location:' . BASE_URL . '/core/entry/login.php');
+            header('location:' . BASE_URL . '/core/sensors/');
         }
         }
 
