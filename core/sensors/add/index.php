@@ -71,21 +71,21 @@ if (!isLoggedIn()) {
                 <div class="col-md-6">
                 <div class="mb-3">
                     <label for="deployment_id" class="form-label">Deployment ID</label>
-                    <input type="text" class="form-control" id="deployment_id" placeholder="Enter deployment ID">
+                    <input type="text" class="form-control" name="deployment_id" id="deployment_id" placeholder="Enter deployment ID">
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name">
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter name">
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="ip_addr" class="form-label">IP Address</label>
-                    <input type="text" class="form-control" id="ip_addr" placeholder="Enter IP address">
+                    <input type="text" class="form-control" name="ip_addr" id="ip_addr" placeholder="Enter IP address">
                 </div>
                 <div class="mb-3">
                     <label for="sensor_type" class="form-label">Sensor Type</label>
-                    <select class="form-control" id="sensor_type">
+                    <select class="form-control" name="sensor_type" id="sensor_type">
                         <option value="" disabled selected style="color: #6c757d;">Select Sensor Type</option>
                         <option value="raspberry-pi">Raspberry Pi</option>
                         <option value="vm-container">VM Container</option>
@@ -96,7 +96,7 @@ if (!isLoggedIn()) {
             </div>
             <div class="mb-3">
                 <label for="notes" class="form-label">Notes</label>
-                <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
+                <textarea class="form-control" name="notes" id="notes" rows="3" placeholder="Enter notes"></textarea>
             </div>
             <div class="text-center float-end d-flex align-items-center">
                 <div class="align-middle"> <!-- Create a container div for vertical alignment -->
