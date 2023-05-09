@@ -1,4 +1,4 @@
 <?php
 session_start();
-require('../../path.php');
+require_once ROOT_PATH . "/path.php";
 require('connection.php');
