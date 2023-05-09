@@ -39,7 +39,7 @@ function isLoggedIn() {
     	   header('location:' . BASE_URL . '/core/alerts/');
         
     	}else{
-    	   $error[] = 'Incorrect email or password!';
+    	   $error[] = 'Possible Incorrect email or password! Account could not be approved yet!';
     	}
     
     };
