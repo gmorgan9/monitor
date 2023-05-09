@@ -24,7 +24,6 @@ $jsonFile = '/var/log/snort/alert_json.txt';
 // Read the JSON file
 $jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
 
-
 // Check the connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
@@ -40,6 +39,9 @@ foreach ($jsonLines as $index => $line) {
         echo "Error parsing JSON data on line " . ($index + 1);
         continue; // Skip to the next line
     }
+
+    // Grab the JSON message and store it in the message field
+    $message = mysqli_real_escape_string($conn, $data["message"]);
 
     // Generate a random identifier
     $idno = generateRandomNumber();
