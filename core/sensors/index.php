@@ -151,12 +151,6 @@ if (!isLoggedIn()) {
 
                     <?php
                         }
-                    } else {
-                        ?> 
-                        <tr>
-                            <?php echo "No data found."; ?>
-                        </tr>
-                    <?php
                     }
                     ?>
                 </tbody>
