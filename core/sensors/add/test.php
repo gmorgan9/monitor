@@ -7,10 +7,10 @@ require_once __DIR__ . "/../../../execute.php";
 
 session_start();
 
-if (!isLoggedIn()) {
-    header('Location: ' . BASE_URL . '/core/entry/login.php');
-    exit;
-}
+// if (!isLoggedIn()) {
+//     header('Location: ' . BASE_URL . '/core/entry/login.php');
+//     exit;
+// }
 ?>
 <!DOCTYPE html>
 <html>
