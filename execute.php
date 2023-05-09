@@ -41,8 +41,7 @@ foreach ($jsonLines as $index => $line) {
     }
 
     // Grab the JSON message and store it in the message field
-    // $message = mysqli_real_escape_string($conn, $data["message"]);
-    $message = $data;
+    $message = mysqli_real_escape_string($conn, $line);
 
     // Generate a random identifier
     $idno = generateRandomNumber();
