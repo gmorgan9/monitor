@@ -44,3 +44,39 @@ function isLoggedIn() {
     
     };
 // end LOGIN
+
+
+// REGISTER
+    if(isset($_POST['register-btn'])){
+
+        $uid = mysqli_real_escape_string($conn, $_POST['user_id']);
+        $idno  = rand(10000, 99999); // figure how to not allow duplicates
+        $fname = mysqli_real_escape_string($conn, $_POST['fname']);
+        $lname = mysqli_real_escape_string($conn, $_POST['lname']);
+        $uname = mysqli_real_escape_string($conn, $_POST['uname']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $pass = md5($_POST['password']);
+        $cpass = md5($_POST['cpassword']);
+        // $acc_type = $_POST['acc_type'];
+    
+        $select = " SELECT * FROM users WHERE uname = '$uname' && email = '$email' && password = '$pass' ";
+    
+        $result = mysqli_query($conn, $select);
+    
+        if(mysqli_num_rows($result) > 0){
+    
+        $error[] = 'user already exist!';
+    
+        }else{
+    
+        if($pass != $cpass){
+            $error[] = 'passwords do not match!';
+        }else{
+            $insert = "INSERT INTO users (idno, firstname, lastname, username, email, password) VALUES('$idno', '$fname','$lname','$uname','$email','$pass')";
+            mysqli_query($conn, $insert);
+            header('location:' . BASE_URL . '/core/entry/login.php');
+        }
+        }
+    
+    };
+// end REGISTER
