@@ -38,7 +38,7 @@ if(isset($_POST['login-btn'])){
 		$_SESSION['uname']           = $row['username'];
 	   $_SESSION['email']            = $row['email'];
 	   $_SESSION['pass']             = $row['password'];
-	   header('location:' . BASE_URL . '/core/alerts.php');
+	   header('location:' . BASE_URL . '/core/alerts/');
 	  
 	}else{
 	   $error[] = 'incorrect email or password!';
