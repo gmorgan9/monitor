@@ -5,9 +5,11 @@ require_once "app/database/functions.php";
 require_once "path.php";
 session_start();
 
-if(isLoggedIn() == false){
-    header('location: '. BASE_URL . '/core/entry/login.php');
-  }
+if (isLoggedIn() == false) {
+    header('Location: ' . BASE_URL . '/core/entry/login.php');
+    exit;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

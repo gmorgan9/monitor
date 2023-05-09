@@ -6,9 +6,11 @@ require_once "../../path.php";
 
 session_start();
 
-if(isLoggedIn() == true){
-    header('location: '. BASE_URL . '/');
-  }
+// if (isLoggedIn() == true) {
+//     header('Location: ' . BASE_URL . '/core/entry/login.php');
+//     exit;
+// }
+
 
 if(isset($_POST['login-btn'])){
 
