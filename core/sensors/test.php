@@ -1,7 +1,7 @@
 <?php
 
 require_once "../../app/database/connection.php";
-// require_once "../../app/database/functions.php";
+require_once "../../app/database/functions.php";
 require_once "../../path.php";
 require_once "../../execute.php";
 
@@ -30,7 +30,7 @@ if (!isLoggedIn()) {
 </head>
 <body>
 
-    <?php include("../../../app/includes/header.php"); ?>
+    <?php include("../../app/includes/header.php"); ?>
 
     <div class="container">
 
