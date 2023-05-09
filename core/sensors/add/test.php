@@ -74,7 +74,7 @@ if (!isLoggedIn()) {
                 <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-outline-primary float-end">Submit</button>
             </div>
         </form>
 
