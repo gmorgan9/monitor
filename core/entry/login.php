@@ -57,7 +57,7 @@ if (isLoggedIn()) {
                      </div>
                      <button name="login-btn" type="submit" class="btn btn-primary">Login</button>
                   </form>
-                  <p class="mt-3">Don't have an account? <a href="/pages/entry/register.php">Register now</a></p>
+                  <p class="mt-3">Don't have an account? <a href="/core/entry/register.php">Register now</a></p>
                </div>
             </div>
          </div>
