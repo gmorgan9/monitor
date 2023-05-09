@@ -48,8 +48,34 @@ if (!isLoggedIn()) {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <form>
+                                <div class="mb-3">
+                                <label for="deployment_id" class="form-label">Deployment ID</label>
+                                <input type="text" class="form-control" id="deployment_id" placeholder="Enter deployment ID">
+                                </div>
+                                <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter name">
+                                </div>
+                                <div class="mb-3">
+                                <label for="ip_addr" class="form-label">IP Address</label>
+                                <input type="text" class="form-control" id="ip_addr" placeholder="Enter IP address">
+                                </div>
+                                <div class="mb-3">
+                                <label for="sensor_type" class="form-label">Sensor Type</label>
+                                <select class="form-control" id="sensor_type">
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                                </div>
+                                <div class="mb-3">
+                                <label for="notes" class="form-label">Notes</label>
+                                <textarea class="form-control" id="notes" rows="3" placeholder="Enter notes"></textarea>
+                                </div>
+                            </form>
                         </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
