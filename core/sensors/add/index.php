@@ -3,18 +3,18 @@
 // require_once "../../../app/database/connection.php";
 // require_once "../../../app/database/functions.php";
 // require_once "../../../path.php";
-require_once ROOT_PATH . "/app/database/connection.php";
-require_once ROOT_PATH . "/app/database/functions.php";
-require_once ROOT_PATH . "/path.php";
-require_once ROOT_PATH . "/execute.php";
+// require_once ROOT_PATH . "/app/database/connection.php";
+// require_once ROOT_PATH . "/app/database/functions.php";
+//require_once ROOT_PATH . "/path.php";
+//require_once ROOT_PATH . "/execute.php";
 
 
 session_start();
 
-if (!isLoggedIn()) {
-    header('Location: ' . BASE_URL . '/core/entry/login.php');
-    exit;
-}
+// if (!isLoggedIn()) {
+//     header('Location: ' . BASE_URL . '/core/entry/login.php');
+//     exit;
+// }
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +34,7 @@ if (!isLoggedIn()) {
 </head>
 <body>
 
-    <?php include(ROOT_PATH . "/app/includes/header.php"); ?>
+    <?php //include(ROOT_PATH . "/app/includes/header.php"); ?>
     
     <!-- container -->
         <div class="container">
