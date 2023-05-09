@@ -18,7 +18,7 @@ function generateRandomNumber($length = 8) {
     return $randomString;
 }
 
-$jsonFile = '/usr/local/etc/snort/alert_json.txt';
+$jsonFile = '/var/log/snort/alert_json.txt';
 
 // Read the JSON file
 $jsonLines = file($jsonFile, FILE_IGNORE_NEW_LINES);
