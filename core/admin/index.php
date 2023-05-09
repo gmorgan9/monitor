@@ -15,6 +15,15 @@ if (!isAdmin()) {
     exit;
 }
 
+// Retrieve users from the database
+$sql = "SELECT * FROM users";
+$result = mysqli_query($connection, $sql);
+
+// Check if the query was successful
+if (!$result) {
+    die("Database query failed: " . mysqli_error($connection));
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
