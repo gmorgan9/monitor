@@ -34,9 +34,11 @@ if (!isLoggedIn()) {
 
     <div class="container">
 
-        <h1 class="mt-3 mb-2">
-            Add New Sensor
-        </h1>
+        <div class="heading mt-3 mb-2 w-75">
+            <h1 class="mt-3 mb-2">
+                Add New Sensor
+            </h1>
+        </div>
 
         <form action="" method="post" class="w-75 mx-auto">
 
