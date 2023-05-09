@@ -47,7 +47,7 @@ if (!isAdmin()) {
             <tbody>
 
             <?php
-                $sql = "SELECT * FROM employee";
+                $sql = "SELECT * FROM users";
                 $all = mysqli_query($conn, $sql);
                 if($all) {
                     while ($row = mysqli_fetch_assoc($all)) {
