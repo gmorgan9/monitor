@@ -17,11 +17,11 @@ if (!isAdmin()) {
 
 // Retrieve users from the database
 $sql = "SELECT * FROM users";
-$result = mysqli_query($connection, $sql);
+$result = mysqli_query($conn, $sql);
 
 // Check if the query was successful
 if (!$result) {
-    die("Database query failed: " . mysqli_error($connection));
+    die("Database query failed: " . mysqli_error($conn));
 }
 
 ?>
