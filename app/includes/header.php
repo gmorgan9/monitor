@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <!-- Brand -->
         <a class="navbar-brand" href="/">
-            <h3><i class="bi bi-clock"></i> Workforce Management System</h3>
+            <h3>MonLog</h3>
         </a>
 
         <ul class="navbar-nav ms-auto d-flex flex-row">
